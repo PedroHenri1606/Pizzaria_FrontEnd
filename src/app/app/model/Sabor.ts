@@ -1,14 +1,17 @@
 import { ProdutoPedido } from "./ProdutoPedido";
-import { AbstractEntity } from "./abstractEntity/AbstractEntity";
 
-export class Sabor extends AbstractEntity{
+export class Sabor {
 
+    id!: number;
+    cadastro!: Date;
+    edicao!: Date;
+    ativo!: boolean;
     nome!: string;
     descricao!: string;
     produtoPedidos: ProdutoPedido[] = [];
 
     constructor(id: number, nome: string, produtoPedidos: ProdutoPedido[]){
-        super(id);
+        this.id = id;
         this.nome = nome;
         this.produtoPedidos = produtoPedidos;
     }

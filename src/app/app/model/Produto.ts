@@ -1,14 +1,17 @@
-import { AbstractEntity } from "./abstractEntity/AbstractEntity";
 import { TamanhoProduto } from "./enum/TamanhoProduto";
 
-export class Produto extends AbstractEntity{
+export class Produto {
 
+    id!: number;
+    cadastro!: Date;
+    edicao!: Date;
+    ativo!: boolean;
     descricao!: string;
     valor!: number;
     tamanhoProduto!: TamanhoProduto;
 
     constructor(id: number, descricao: string, valor: number, tamanhoProduto: TamanhoProduto){
-        super(id);
+        this.id = id;
         this.descricao = descricao;
         this.valor = valor;
         this.tamanhoProduto = tamanhoProduto;

@@ -1,12 +1,14 @@
-import { AbstractEntity } from "./abstractEntity/AbstractEntity";
+export class Acompnhamento {
 
-export class Acompnhamento extends AbstractEntity {
-
+    id!: number;
+    cadastro!: Date;
+    edicao!: Date;
+    ativo!: boolean;
     descricao!: string;
     valor!: number;
 
     constructor(id: number, descricao: string, valor: number){
-        super(id);
+        this.id = id;
         this.descricao = descricao;
         this.valor = valor;
     }

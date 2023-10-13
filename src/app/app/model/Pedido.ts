@@ -2,12 +2,15 @@ import { AcompnhamentoPedido } from "./AcompanhamentoPedido";
 import { Cliente } from "./Cliente";
 import { Funcionario } from "./Funcionario";
 import { ProdutoPedido } from "./ProdutoPedido";
-import { AbstractEntity } from "./abstractEntity/AbstractEntity";
 import { FormaDePagamento } from "./enum/FormaDePagamento";
 import { SituacaoPedido } from "./enum/SituacaoPedido";
 
-export class Pedido extends AbstractEntity{
+export class Pedido{
 
+    id!: number;
+    cadastro!: Date;
+    edicao!: Date;
+    ativo!: boolean;
     cliente!: Cliente;
     item: ProdutoPedido[] = [];
     acompanhamento: AcompnhamentoPedido[] = [];
@@ -20,7 +23,7 @@ export class Pedido extends AbstractEntity{
     valorTotal!: number;
 
     constructor(id: number, cliente: Cliente, funcionario: Funcionario, observacao: string, entregar: boolean, formaDePagamento: FormaDePagamento){
-        super(id);
+        this.id = id;
         this.cliente = cliente;
         this.funcionario = funcionario;
         this.observacao = observacao;

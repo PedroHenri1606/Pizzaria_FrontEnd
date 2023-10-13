@@ -12,7 +12,10 @@ import { PedidoComponent } from './app/pedido/pedido.component';
 import { EnderecoComponent } from './app/endereco/endereco.component';
 import { AcompanhamentoPedidoComponent } from './app/acompanhamento-pedido/acompanhamento-pedido.component';
 import { ProdutoPedidoComponent } from './app/produto-pedido/produto-pedido.component';
-import { LayoutComponent } from './app/layout/layout.component';
+import { IndexComponent } from './app/layout/index/index.component';
+import { HeaderComponent } from './app/layout/header/header.component';
+import { FooterComponent } from './app/layout/footer/footer.component';
+import { LoginComponent } from './app/sistema/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { LayoutComponent } from './app/layout/layout.component';
     EnderecoComponent,
     AcompanhamentoPedidoComponent,
     ProdutoPedidoComponent,
-    LayoutComponent
+    IndexComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
