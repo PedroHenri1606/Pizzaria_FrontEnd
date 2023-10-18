@@ -1,4 +1,4 @@
-export class Acompnhamento {
+export class Acompanhamento {
 
     id!: number;
     cadastro!: Date;
