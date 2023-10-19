@@ -1,1 +1,14 @@
-<p>login works!</p>
+<div class="fundo">
+    <h2>Pizzaria</h2>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="login" placeholder="Nome" [(ngModel)]="user.email">
+        <label for="login">Nome</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="senha" placeholder="Senha" [(ngModel)]="user.senha">
+        <label for="senha">Senha</label>
+    </div>
+
+    <button class="btn btn-outline-success" (click)="logar()" type="button" value="Logar">Logar</button>
+</div>
