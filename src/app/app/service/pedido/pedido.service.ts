@@ -30,7 +30,7 @@ export class PedidoService {
     return this.http.put<Pedido>(this.API + `/editar?id=${pedidoNovo.id}`, pedidoNovo);
   }
 
-  salvar(pedido: Partial<Pedido){
+  salvar(pedido: Partial<Pedido>){
     if(pedido.id){
       return this.editar(pedido);
 
