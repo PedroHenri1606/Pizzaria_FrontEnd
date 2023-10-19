@@ -14,16 +14,16 @@ export class AcompanhamentoPedidoService {
 
   constructor() { }
 
+  cadastrar(acompanhamentoPedido: Partial<AcompanhamentoPedido>){
+    return this.http.post<AcompanhamentoPedido>(this.API + ``, acompanhamentoPedido);
+  }
+
   buscarPorId(id: number){
     return this.http.get<AcompanhamentoPedido>(this.API + `/buscar?id=${id}`);
   }
 
   listar(): Observable<AcompanhamentoPedido[]>{
     return this.http.get<AcompanhamentoPedido[]>(this.API + `/listar`);
-  }
-
-  cadastrar(acompanhamentoPedido: Partial<AcompanhamentoPedido>){
-    return this.http.post<AcompanhamentoPedido>(this.API + ``, acompanhamentoPedido);
   }
 
   editar(acompanhamentoPedidoNovo: Partial<AcompanhamentoPedido>){

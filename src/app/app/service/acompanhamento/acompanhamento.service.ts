@@ -14,6 +14,10 @@ export class AcompanhamentoService {
 
   constructor() { }
 
+  cadastrar(acompanhamento: Partial<Acompanhamento>){
+    return this.http.post<Acompanhamento>(this.API + `` , acompanhamento);
+  }
+
   buscarPorId(id: number){
     return this.http.get<Acompanhamento>(this.API + `/buscar?id=${id}`)
   }
@@ -40,10 +44,6 @@ export class AcompanhamentoService {
 
   listar(): Observable<Acompanhamento[]>{
     return this.http.get<Acompanhamento[]>(this.API + `/listar`);
-  }
-
-  cadastrar(acompanhamento: Partial<Acompanhamento>){
-    return this.http.post<Acompanhamento>(this.API + `` , acompanhamento);
   }
 
   editar(acompanhamentoNovo: Partial<Acompanhamento>){

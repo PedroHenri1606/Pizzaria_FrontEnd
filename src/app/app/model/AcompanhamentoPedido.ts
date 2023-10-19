@@ -1,4 +1,4 @@
-import { Acompnhamento } from "./Acompanhamento";
+import { Acompanhamento } from "./Acompanhamento";
 import { Pedido } from "./Pedido";
 
 export class AcompanhamentoPedido {
@@ -7,11 +7,11 @@ export class AcompanhamentoPedido {
     cadastro!: Date;
     edicao!: Date;
     ativo!: boolean;
-    acompanhamento!: Acompnhamento;
+    acompanhamento!: Acompanhamento;
     quantidade!: number;
     pedido!: Pedido;
 
-    constructor(id: number, acompanhamento: Acompnhamento, quantidade: number, pedido: Pedido){
+    constructor(id: number, acompanhamento: Acompanhamento, quantidade: number, pedido: Pedido){
         this.id = id;
         this.acompanhamento = acompanhamento;
         this.quantidade = quantidade;
