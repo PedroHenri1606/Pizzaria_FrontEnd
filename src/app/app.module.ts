@@ -1,42 +1,69 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClienteComponent } from './app/cliente/cliente.component';
-import { FuncionarioComponent } from './app/funcionario/funcionario.component';
-import { AcompanhamentoComponent } from './app/acompanhamento/acompanhamento.component';
-import { ProdutoComponent } from './app/produto/produto.component';
-import { SaborComponent } from './app/sabor/sabor.component';
-import { PedidoComponent } from './app/pedido/pedido.component';
-import { EnderecoComponent } from './app/endereco/endereco.component';
-import { AcompanhamentoPedidoComponent } from './app/acompanhamento-pedido/acompanhamento-pedido.component';
-import { ProdutoPedidoComponent } from './app/produto-pedido/produto-pedido.component';
+
 import { IndexComponent } from './app/layout/index/index.component';
 import { HeaderComponent } from './app/layout/header/header.component';
 import { FooterComponent } from './app/layout/footer/footer.component';
-import { LoginComponent } from './app/sistema/login/login.component';
+import { LoginComponent } from './app/system/login/login.component';
+import { ProdutodetailsComponent } from './app/components/produto/produtodetails/produtodetails.component';
+import { ProdutolistComponent } from './app/components/produto/produtolist/produtolist.component';
+import { AcompanhamentolistComponent } from './app/components/acompanhamento/acompanhamentolist/acompanhamentolist.component';
+import { AcompanhamentodetailsComponent } from './app/components/acompanhamento/acompanhamentodetails/acompanhamentodetails.component';
+import { AcompanhamentoPedidolistComponent } from './app/components/acompanhamento-pedido/acompanhamento-pedidolist/acompanhamento-pedidolist.component';
+import { AcompanhamentoPedidodetailsComponent } from './app/components/acompanhamento-pedido/acompanhamento-pedidodetails/acompanhamento-pedidodetails.component';
+import { ClientelistComponent } from './app/components/cliente/clientelist/clientelist.component';
+import { ClientedetailsComponent } from './app/components/cliente/clientedetails/clientedetails.component';
+import { EnderecolistComponent } from './app/components/endereco/enderecolist/enderecolist.component';
+import { EnderecodetailsComponent } from './app/components/endereco/enderecodetails/enderecodetails.component';
+import { FuncionariolistComponent } from './app/components/funcionario/funcionariolist/funcionariolist.component';
+import { FuncionariodetailsComponent } from './app/components/funcionario/funcionariodetails/funcionariodetails.component';
+import { PedidolistComponent } from './app/components/pedido/pedidolist/pedidolist.component';
+import { PedidodetailsComponent } from './app/components/pedido/pedidodetails/pedidodetails.component';
+import { ProdutoPedidolistComponent } from './app/components/produto-pedido/produto-pedidolist/produto-pedidolist.component';
+import { ProdutoPedidodetailsComponent } from './app/components/produto-pedido/produto-pedidodetails/produto-pedidodetails.component';
+import { SaborlistComponent } from './app/components/sabor/saborlist/saborlist.component';
+import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabordetails.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClienteComponent,
-    FuncionarioComponent,
-    AcompanhamentoComponent,
-    ProdutoComponent,
-    SaborComponent,
-    PedidoComponent,
-    EnderecoComponent,
-    AcompanhamentoPedidoComponent,
-    ProdutoPedidoComponent,
     IndexComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    ProdutolistComponent,
+    ProdutodetailsComponent,
+    AcompanhamentolistComponent,
+    AcompanhamentodetailsComponent,
+    AcompanhamentoPedidolistComponent,
+    AcompanhamentoPedidodetailsComponent,
+    ClientelistComponent,
+    ClientedetailsComponent,
+    EnderecolistComponent,
+    EnderecodetailsComponent,
+    FuncionariolistComponent,
+    FuncionariodetailsComponent,
+    PedidolistComponent,
+    PedidodetailsComponent,
+    ProdutoPedidolistComponent,
+    ProdutoPedidodetailsComponent,
+    SaborlistComponent,
+    SabordetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

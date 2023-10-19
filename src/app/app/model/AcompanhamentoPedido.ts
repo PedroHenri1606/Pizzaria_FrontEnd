@@ -1,7 +1,7 @@
 import { Acompnhamento } from "./Acompanhamento";
 import { Pedido } from "./Pedido";
 
-export class AcompnhamentoPedido {
+export class AcompanhamentoPedido {
 
     id!: number;
     cadastro!: Date;
