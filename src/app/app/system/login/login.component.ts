@@ -15,10 +15,10 @@ export class LoginComponent {
 
   logar(){
     if(this.user.email == "admin" && this.user.senha == "admin"){
-      this.roteador.navigate(['/admin/pedido']);
+      this.roteador.navigate(['/admin/pedido/menu']);
     
     } else if(this.user.email == "func" && this.user.senha == "func"){
-      this.roteador.navigate(['/funcionario/pedido']);
+      this.roteador.navigate(['/funcionario/pedido/menu']);
     } 
     else {
       alert("Senha ou emails incorretos, tente novamente!");

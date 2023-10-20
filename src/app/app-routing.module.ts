@@ -17,45 +17,24 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "admin", component: IndexComponent, children: [
     
-    {path: "acompanhamento", component: AcompanhamentolistComponent},
+    {path: "acompanhamento/menu", component: AcompanhamentolistComponent},
 
-    {path: "acompanhamento-pedido", component: AcompanhamentoPedidolistComponent},
+    {path: "acompanhamento-pedido/menu", component: AcompanhamentoPedidolistComponent},
 
-    {path: "cliente", component: ClientelistComponent},
+    {path: "cliente/menu", component: ClientelistComponent},
 
-    {path: "endereco", component: EnderecolistComponent},
+    {path: "endereco/menu", component: EnderecolistComponent},
 
-    {path: "funcionario", component: FuncionariolistComponent},
+    {path: "funcionario/menu", component: FuncionariolistComponent},
 
-    {path: "pedido", component: PedidolistComponent},
+    {path: "pedido/menu", component: PedidolistComponent},
 
-    {path: "produtos", component: ProdutolistComponent},
+    {path: "produto/menu", component: ProdutolistComponent},
 
-    {path: "produto-pedido", component: ProdutoPedidolistComponent},
+    {path: "produto-pedido/menu", component: ProdutoPedidolistComponent},
 
-    {path: "sabor", component: SaborlistComponent}
+    {path: "sabor/menu", component: SaborlistComponent}
   ]},
-
-  {path: "funcionario", component: IndexComponent, children:[
-    
-    {path: "acompanhamento", component: AcompanhamentolistComponent},
-
-    {path: "acompanhamento-pedido", component: AcompanhamentoPedidolistComponent},
-
-    {path: "cliente", component: ClientelistComponent},
-
-    {path: "endereco", component: EnderecolistComponent},
-
-    {path: "funcionario", component: FuncionariolistComponent},
-
-    {path: "pedido", component: PedidolistComponent},
-
-    {path: "produtos", component: ProdutolistComponent},
-
-    {path: "produto-pedido", component: ProdutoPedidolistComponent},
-
-    {path: "sabor", component: SaborlistComponent}
-  ]}
 ];
 
 

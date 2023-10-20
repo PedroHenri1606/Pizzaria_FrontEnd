@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  //UTILIZAR FUNÇÕES PARA FAZER A CONEXÃO DA NAV BAR COM AS FUNÇÕES DOS COMPONENTES
 }
