@@ -1,1 +1,13 @@
-<p>pedidodetails works!</p>
+<form (ngSubmit)="cadastrar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="Cliente" placeholder="Cliente" [(ngModel)]="pedido.cliente">
+        <label for="Cliente">Cliente</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" name="Funcionario" placeholder="Funcionario" [(ngModel)]="pedido.funcionario">
+        <label for="Funcionario">Funcionario</label>
+    </div>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>

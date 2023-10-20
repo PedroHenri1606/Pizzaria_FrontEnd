@@ -1,4 +1,4 @@
-import { AcompnhamentoPedido } from "./AcompanhamentoPedido";
+import { AcompanhamentoPedido } from "./AcompanhamentoPedido";
 import { Cliente } from "./Cliente";
 import { Funcionario } from "./Funcionario";
 import { ProdutoPedido } from "./ProdutoPedido";
@@ -13,7 +13,7 @@ export class Pedido{
     ativo!: boolean;
     cliente!: Cliente;
     item: ProdutoPedido[] = [];
-    acompanhamento: AcompnhamentoPedido[] = [];
+    acompanhamento: AcompanhamentoPedido[] = [];
     funcionario!: Funcionario;
     observacao!: string;
     entregar!: boolean;
@@ -21,14 +21,4 @@ export class Pedido{
     situacaoPedido!: SituacaoPedido;
     formaDePagamento!: FormaDePagamento;
     valorTotal!: number;
-
-    constructor(id: number, cliente: Cliente, funcionario: Funcionario, observacao: string, entregar: boolean, formaDePagamento: FormaDePagamento){
-        this.id = id;
-        this.cliente = cliente;
-        this.funcionario = funcionario;
-        this.observacao = observacao;
-        this.entregar = entregar;
-        this.formaDePagamento = formaDePagamento;
-    }
-
 }
