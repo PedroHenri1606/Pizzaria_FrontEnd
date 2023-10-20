@@ -1,1 +1,72 @@
-<p>clientelist works!</p>
+<div class="opcoes">
+
+    <div class="row justify-content-end">
+        <div class="col-2">
+            <input type="search" class="form-control buscarId" placeholder="Buscar por Id" aria-label="search" [(ngModel)]="indiceSelecionado">
+        </div>
+
+        <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
+        <button class= "btn btn-outline-success botoes col-2" (click)="adicionar(cadastrar)">Adicionar Cliente</button>
+    </div>
+</div>
+
+<div class="tabela">
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col" class="col">Id</th>    
+                <th scope="col" class="col">Nome</th>
+                <th scope="col" class="col">CPF</th>
+                <th scope="col" class="col">Telefone</th>
+                <th scope="col" class="col">Ativo</th>
+                <th scope="col" class="col">Opções</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr scope="row" *ngFor="let cliente of lista">
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.cpf}}</td>
+                <td>{{cliente.telefone}}</td>
+                <td>{{cliente.ativo}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning botoes" (click)="editar(detalhar,cliente,cliente.id)">Detalhes</button>
+                    <button type="button" class="btn btn-outline-danger botoes" (click)="deletar(cliente)">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #cadastrar let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Cadastrar cliente</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-clientedetails (retorno)="salvar($event)" ></app-clientedetails>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<ng-template #detalhar let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Detalhar cliente</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-clientedetails [cliente]="clienteSelecionado" (retorno)="salvar($event)" ></app-clientedetails>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

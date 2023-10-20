@@ -9,12 +9,4 @@ export class Funcionario extends User {
     nome!: string;
     cpf!: string;
     telefone!: string;
-
-    constructor(id: number, email: string, senha: string, nome: string, cpf: string, telefone: string){
-        super(email, senha);
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-    }
 }

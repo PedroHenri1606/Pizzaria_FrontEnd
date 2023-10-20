@@ -11,7 +11,7 @@ export class LoginComponent {
 
   roteador = inject(Router);
 
-  user: User = new User("","");
+  user: User = new User();
 
   logar(){
     if(this.user.email == "admin" && this.user.senha == "admin"){
