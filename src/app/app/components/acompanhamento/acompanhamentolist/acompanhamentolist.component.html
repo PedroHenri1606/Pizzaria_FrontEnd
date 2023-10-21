@@ -1,1 +1,70 @@
-<p>acompanhamentolist works!</p>
+<div class="opcoes">
+
+    <div class="row justify-content-end">
+        <div class="col-2">
+            <input type="search" class="form-control buscarId" placeholder="Buscar por Id" aria-label="search" [(ngModel)]="indiceSelecionado">
+        </div>
+
+        <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
+        <button class= "btn btn-outline-success botoes col-2" (click)="adicionar(cadastrar)">Adicionar Acompanhamento</button>
+    </div>
+</div>
+
+<div class="tabela">
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col" class="col">Id</th>    
+                <th scope="col" class="col">Descrição</th>
+                <th scope="col" class="col">Valor</th>
+                <th scope="col" class="col">Ativo</th>
+                <th scope="col" class="col">Opções</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr scope="row" *ngFor="let acompanhamento of lista">
+                <td>{{acompanhamento.id}}</td>
+                <td>{{acompanhamento.descricao}}</td>
+                <td>{{acompanhamento.valor}}</td>
+                <td>{{acompanhamento.ativo}}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning botoes" (click)="editar(detalhar,acompanhamento.id,acompanhamento)">Detalhes</button>
+                    <button type="button" class="btn btn-outline-danger botoes" (click)="deletar(acompanhamento)">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #cadastrar let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Cadastrar Acompanhamento</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-acompanhamentodetails (retorno)="salvar($event)"></app-acompanhamentodetails>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<ng-template #detalhar let-modal>
+    <div class="modal-header">
+		<h4 class="modal-title">Detalhar Acompanhamento</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		
+        <app-acompanhamentodetails [acompanhamento]="acompanhamentoSelecionado" (retorno)="salvar($event)" ></app-acompanhamentodetails>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

@@ -10,9 +10,5 @@ export class Sabor {
     descricao!: string;
     produtoPedidos: ProdutoPedido[] = [];
 
-    constructor(id: number, nome: string, produtoPedidos: ProdutoPedido[]){
-        this.id = id;
-        this.nome = nome;
-        this.produtoPedidos = produtoPedidos;
-    }
+  
 }

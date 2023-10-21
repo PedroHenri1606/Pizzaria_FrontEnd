@@ -13,11 +13,5 @@ export class ProdutoPedido {
     sabores: Sabor[] = [];
     pedido!: Pedido;
 
-    constructor(id: number, produto: Produto, quantidade: number, sabores: Sabor[], pedido: Pedido){
-        this.id = id;
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.sabores = sabores;
-        this.pedido = pedido;
-    }
+ 
 }

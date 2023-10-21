@@ -1,1 +1,13 @@
-<p>acompanhamentodetails works!</p>
+<form (ngSubmit)="cadastrar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="descricao" placeholder="Descrição" [(ngModel)]="acompanhamento.descricao">
+        <label for="Descrição">Descrição</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="valor" placeholder="Valor" [(ngModel)]="acompanhamento.valor">
+        <label for="Valor">Valor</label>
+    </div>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>

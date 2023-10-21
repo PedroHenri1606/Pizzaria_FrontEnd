@@ -56,7 +56,7 @@ export class ProdutolistComponent {
     });
   }
 
-  quati(produto: Produto){
+  salvar(produto: Produto){
     if(produto.id > 0){
       this.lista[this.indiceSelecionado] = produto;
     

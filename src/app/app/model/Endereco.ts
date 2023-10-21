@@ -12,12 +12,5 @@ export class Endereco{
     numero!: number;
     cliente!: Cliente;
 
-    constructor(id: number, cep: string, bairro: string, logadouro: string, numero: number, cliente: Cliente){
-        this.id = id;
-        this.cep = cep;
-        this.bairro = bairro;
-        this.logadouro = logadouro;
-        this.numero = numero;
-        this.cliente = cliente;
-    }
+
 }
