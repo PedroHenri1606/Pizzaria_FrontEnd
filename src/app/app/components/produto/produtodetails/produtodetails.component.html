@@ -1,1 +1,23 @@
-<p>produtodetails works!</p>
+<form (ngSubmit)="cadastrar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="descricao" placeholder="Descrição" [(ngModel)]="produto.descricao">
+        <label for="Descrição">Descrição</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="valor" placeholder="Valor" [(ngModel)]="produto.valor">
+        <label for="Valor">Valor</label>
+    </div>
+
+
+    <select class="form-select mb-3" aria-placeholder="Escolha o tamanho do Produto" name="tamanho" [(ngModel)]="produto.tamanho">
+        <option value="BROTINHO">BROTINHO</option>
+        <option value="P">P</option>
+        <option value="M">M</option>
+        <option value="G">G</option>
+        <option value="GG">GG</option>
+
+      </select>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>

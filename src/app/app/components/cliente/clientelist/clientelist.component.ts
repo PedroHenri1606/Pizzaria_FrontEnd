@@ -57,10 +57,11 @@ export class ClientelistComponent {
     });
   }
 
+
   salvar(cliente: Cliente){
     if(cliente.id > 0){
       this.lista[this.indiceSelecionado] = cliente;
-
+    
     } else {
       this.lista.push(cliente);
     }

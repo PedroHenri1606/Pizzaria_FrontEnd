@@ -14,6 +14,17 @@ export class ProdutoService {
 
   constructor() { }
 
+  salvar(produto: Partial<Produto>){
+    if(produto.id){
+      console.log("update");
+      return this.editar(produto);
+
+    } else {
+      console.log("salvar");
+      return this.cadastrar(produto);
+    }
+  }
+
   cadastrar(produto: Partial<Produto>){
     return this.http.post<Produto>(this.API + ``, produto);
   }
@@ -54,12 +65,4 @@ export class ProdutoService {
     return this.http.delete<Produto>(this.API + `/deletar?id=${id}`);
   }
 
-  salvar(produto: Partial<Produto>){
-    if(produto.id){
-      return this.editar(produto);
-
-    } else {
-      return this.cadastrar(produto);
-    }
-  }
 }

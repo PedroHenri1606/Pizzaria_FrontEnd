@@ -1,6 +1,4 @@
-import { User } from "./User";
-
-export class Cliente extends User{
+export class Cliente{
 
     id!: number;
     cadastro!: Date;

@@ -1,7 +1,7 @@
 export enum TamanhoProduto{
-    BROTINHO,
-    P,
-    M,
-    G,
-    GG
+    BROTINHO = "BROTINHO",
+    P = "P",
+    M = "M",
+    G = "G",
+    GG = "GG",
 }

@@ -1,1 +1,18 @@
-<p>funcionariodetails works!</p>
+<form (ngSubmit)="cadastrar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="funcionario.nome">
+        <label for="Nome">Nome</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="CPF" placeholder="CPF" [(ngModel)]="funcionario.cpf">
+        <label for="CPF">CPF</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="Telefone" class="form-control" name="Telefone" placeholder="Telefone" [(ngModel)]="funcionario.telefone">
+        <label for="Telefone">Telefone</label>
+    </div>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>
