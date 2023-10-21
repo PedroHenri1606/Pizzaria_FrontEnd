@@ -1,1 +1,13 @@
-<p>sabordetails works!</p>
+<form (ngSubmit)="cadastrar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="nome" placeholder="nome" [(ngModel)]="sabor.nome">
+        <label for="nome">Nome</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="descricao" placeholder="descricao" [(ngModel)]="sabor.descricao">
+        <label for="descricao">Descrição</label>
+    </div>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>
