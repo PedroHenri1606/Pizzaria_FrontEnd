@@ -6,7 +6,7 @@
         </div>
 
         <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
-        <button class= "btn btn-outline-success botoes col-2" (click)="adicionar(cadastrar)">Adicionar Produto</button>
+        <button class= "btn btn-outline-success botoes col-2" (click)="salvar(cadastrar)">Adicionar sabor</button>
     </div>
 </div>
 
@@ -16,9 +16,9 @@
         <thead>
             <tr>
                 <th scope="col" class="col">Id</th>    
+                <th scope="col" class="col">Nome</th>
                 <th scope="col" class="col">Descrição</th>
-                <th scope="col" class="col">Valor</th>
-                <th scope="col" class="col">Tamanho</th>
+                <th scope="col" class="col">Ativo</th>
                 <th scope="col" class="col">Opções</th>
 
             </tr>
@@ -41,12 +41,12 @@
 
 <ng-template #cadastrar let-modal>
     <div class="modal-header">
-		<h4 class="modal-title">Cadastrar Produto</h4>
+		<h4 class="modal-title">Cadastrar sabor</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
 		
-        <app-sabordetails (retorno)="salvar($event)"></app-sabordetails>
+        <app-sabordetails (retorno)="adicionarOuEditar($event)"></app-sabordetails>
             
 	</div>
 	<div class="modal-footer">
@@ -56,12 +56,12 @@
 
 <ng-template #detalhar let-modal>
     <div class="modal-header">
-		<h4 class="modal-title">Detalhar Produto</h4>
+		<h4 class="modal-title">Detalhar sabor</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
 		
-        <app-sabordetails [sabor]="saborSelecionado" (retorno)="salvar($event)" ></app-sabordetails>
+        <app-sabordetails [sabor]="saborSelecionado" (retorno)="adicionarOuEditar($event)" ></app-sabordetails>
             
 	</div>
 	<div class="modal-footer">

@@ -6,7 +6,7 @@
         </div>
 
         <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
-        <button class= "btn btn-outline-success botoes col-2" (click)="adicionar(cadastrar)">Adicionar Funcionario</button>
+        <button class= "btn btn-outline-success botoes col-2" (click)="salvar(cadastrar)">Adicionar Funcionario</button>
     </div>
 </div>
 
@@ -48,7 +48,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-funcionariodetails (retorno)="salvar($event)" ></app-funcionariodetails>
+        <app-funcionariodetails (retorno)="adicionarOuEditar($event)" ></app-funcionariodetails>
             
 	</div>
 	<div class="modal-footer">
@@ -63,7 +63,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-funcionariodetails [funcionario]="funcionarioSelecionado" (retorno)="salvar($event)" ></app-funcionariodetails>
+        <app-funcionariodetails [funcionario]="funcionarioSelecionado" (retorno)="adicionarOuEditar($event)" ></app-funcionariodetails>
             
 	</div>
 	<div class="modal-footer">

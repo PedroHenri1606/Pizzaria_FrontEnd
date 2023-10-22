@@ -6,7 +6,7 @@
         </div>
 
         <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
-        <button class= "btn btn-outline-success botoes col-2" (click)="adicionar(cadastrar)">Adicionar Cliente</button>
+        <button class= "btn btn-outline-success botoes col-2" (click)="salvar(cadastrar)">Adicionar Cliente</button>
     </div>
 </div>
 
@@ -33,7 +33,7 @@
                 <td>{{cliente.telefone}}</td>
                 <td>{{cliente.ativo}}</td>
                 <td>
-                    <button type="button" class="btn btn-outline-warning botoes" (click)="editar(detalhar,cliente,cliente.id)">Detalhes</button>
+                    <button type="button" class="btn btn-outline-warning botoes" (click)="editar(detalhar,cliente.id, cliente)">Detalhes</button>
                     <button type="button" class="btn btn-outline-danger botoes" (click)="deletar(cliente)">Deletar</button>
                 </td>
             </tr>
@@ -48,7 +48,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-clientedetails (retorno)="salvar($event)" ></app-clientedetails>
+        <app-clientedetails (retorno)="adicionarOuEditar($event)" ></app-clientedetails>
             
 	</div>
 	<div class="modal-footer">
@@ -63,7 +63,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-clientedetails [cliente]="clienteSelecionado" (retorno)="salvar($event)" ></app-clientedetails>
+        <app-clientedetails [cliente]="clienteSelecionado" (retorno)="adicionarOuEditar($event)" ></app-clientedetails>
             
 	</div>
 	<div class="modal-footer">

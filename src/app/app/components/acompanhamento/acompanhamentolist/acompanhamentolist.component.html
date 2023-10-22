@@ -46,7 +46,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-acompanhamentodetails (retorno)="salvar($event)"></app-acompanhamentodetails>
+        <app-acompanhamentodetails (retorno)="adicionarOuEditar($event)"></app-acompanhamentodetails>
             
 	</div>
 	<div class="modal-footer">
@@ -61,7 +61,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-acompanhamentodetails [acompanhamento]="acompanhamentoSelecionado" (retorno)="salvar($event)" ></app-acompanhamentodetails>
+        <app-acompanhamentodetails [acompanhamento]="acompanhamentoSelecionado" (retorno)="adicionarOuEditar($event)" ></app-acompanhamentodetails>
             
 	</div>
 	<div class="modal-footer">

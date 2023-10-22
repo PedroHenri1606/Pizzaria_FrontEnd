@@ -9,5 +9,10 @@
         <label for="descricao">Descrição</label>
     </div>
 
+    <select class="form-select form-select-lg mb-3" aria-label="Situação do cliente" name="situacao" [(ngModel)]="sabor.ativo">
+        <option value="true">Ativo</option>
+        <option value="false">Inativo</option>
+      </select>
+
     <button class= "btn btn-outline-success"> Salvar</button>
 </form>
