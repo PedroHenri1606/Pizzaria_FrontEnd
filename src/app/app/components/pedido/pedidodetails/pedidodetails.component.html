@@ -9,5 +9,25 @@
         <label for="Funcionario">Funcionario</label>
     </div>
 
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produto of pedido.item; let i = index">
+                <th scope="row">{{ produto.id }}</th>
+
+                <td> <button type="button" class="btn btn-primary" (click)="excluir(produto,i)">Excluir</button> </td>
+            </tr>
+        </tbody>
+    </table>
+
     <button class= "btn btn-outline-success"> Salvar</button>
 </form>

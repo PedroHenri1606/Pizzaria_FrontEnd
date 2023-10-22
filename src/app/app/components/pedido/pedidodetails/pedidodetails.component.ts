@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Pedido } from 'src/app/app/model/Pedido';
+import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
 import { PedidoService } from 'src/app/app/service/pedido/pedido.service';
 
 @Component({
@@ -14,6 +16,9 @@ export class PedidodetailsComponent {
 
   service = inject(PedidoService);
 
+  modalService = inject(NgbModal);
+  modalRef!: NgbModalRef;
+
   constructor(){}
 
   cadastrar(){
@@ -25,5 +30,23 @@ export class PedidodetailsComponent {
         alert("Erro no envio dos dados, por favor revise o preenchimento dos cambos e informações presentes!");
       }
     })
+  }
+
+  excluir(produtoPedido: ProdutoPedido, indice: number){
+    this.pedido.item.splice(indice,1);
+  }
+
+  retornoProdutoPedidoList(produtoPedido: ProdutoPedido){
+    
+    if(this.pedido.item == null){
+      this.pedido.item = [];
+
+      this.pedido.item.push(produtoPedido);
+      this.modalRef.dismiss();
+    }
+  }
+
+  lancar(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 }

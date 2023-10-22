@@ -4,15 +4,22 @@
         <label for="Nome">Nome</label>
     </div>
 
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="CPF" placeholder="CPF" [(ngModel)]="funcionario.cpf">
-        <label for="CPF">CPF</label>
+    <div class="row">
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="CPF" placeholder="CPF" [(ngModel)]="funcionario.cpf">
+            <label for="CPF">CPF</label>
+        </div>
+
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="Telefone" placeholder="Telefone" [(ngModel)]="funcionario.telefone">
+            <label for="Telefone">Telefone</label>
+        </div>
     </div>
 
-    <div class="form-floating mb-3">
-        <input type="Telefone" class="form-control" name="Telefone" placeholder="Telefone" [(ngModel)]="funcionario.telefone">
-        <label for="Telefone">Telefone</label>
-    </div>
-
+      <select class="form-select form-select-lg mb-3" aria-label="Situação do cliente" name="situacao" [(ngModel)]="funcionario.ativo">
+        <option value="true">Ativo</option>
+        <option value="false">Inativo</option>
+      </select>
+                                                                
     <button class= "btn btn-outline-success"> Salvar</button>
 </form>

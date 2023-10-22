@@ -8,8 +8,6 @@ import { SituacaoPedido } from "./enum/SituacaoPedido";
 export class Pedido{
 
     id!: number;
-    cadastro!: Date;
-    edicao!: Date;
     ativo!: boolean;
     cliente!: Cliente;
     item: ProdutoPedido[] = [];

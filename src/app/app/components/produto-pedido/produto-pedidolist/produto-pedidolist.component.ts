@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 
 @Component({
   selector: 'app-produto-pedidolist',
@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./produto-pedidolist.component.scss']
 })
 export class ProdutoPedidolistComponent {
-
 }
