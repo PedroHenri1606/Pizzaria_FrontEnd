@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Produto } from 'src/app/app/model/Produto';
 import { ProdutoService } from 'src/app/app/service/produto/produto.service';
@@ -12,8 +12,12 @@ export class ProdutolistComponent {
 
   lista: Produto[] = [];
 
+  @Output() retorno = new EventEmitter<Produto>();
+  @Input() modoLancamento: boolean = false;
+
+
   indiceSelecionado!: number;
-  produtoSelecionado!: Produto;
+  produtoSelecionado: Produto = new Produto();
 
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
@@ -70,5 +74,9 @@ export class ProdutolistComponent {
   adicionarOuEditar(produto: Produto){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  lancamento(produto: Produto){
+    this.retorno.emit(produto);
   }
 }

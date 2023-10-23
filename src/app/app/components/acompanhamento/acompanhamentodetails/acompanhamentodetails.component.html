@@ -9,5 +9,10 @@
         <label for="Valor">Valor</label>
     </div>
 
+    <select class="form-select form-select-lg mb-3" name="situacao" [(ngModel)]="acompanhamento.ativo">
+        <option value="true">Ativo</option>
+        <option value="false">Inativo</option>
+      </select>
+
     <button class= "btn btn-outline-success"> Salvar</button>
 </form>

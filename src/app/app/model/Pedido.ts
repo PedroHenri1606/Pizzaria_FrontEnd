@@ -1,7 +1,7 @@
-import { AcompanhamentoPedido } from "./AcompanhamentoPedido";
+import { Acompanhamento } from "./Acompanhamento";
 import { Cliente } from "./Cliente";
 import { Funcionario } from "./Funcionario";
-import { ProdutoPedido } from "./ProdutoPedido";
+import { Produto } from "./Produto";
 import { FormaDePagamento } from "./enum/FormaDePagamento";
 import { SituacaoPedido } from "./enum/SituacaoPedido";
 
@@ -10,8 +10,8 @@ export class Pedido{
     id!: number;
     ativo!: boolean;
     cliente!: Cliente;
-    item: ProdutoPedido[] = [];
-    acompanhamento: AcompanhamentoPedido[] = [];
+    item: Produto[] = [];
+    acompanhamento: Acompanhamento[] = [];
     funcionario!: Funcionario;
     observacao!: string;
     entregar!: boolean;

@@ -1,0 +1,98 @@
+<form (ngSubmit)="salvar()">
+    
+    <table class="table">
+        <thead>
+            <tr class="row">
+                <th class="col-4">Nome</th>
+                <th class="col-4">Valor</th>
+                <th class="col-4">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class= "row"*ngFor="let produto of pedido.item;let i = index">
+                <td class="col-4"> {{ produto.descricao }} </td>
+                <td class="col-4"> {{ produto.valor }} </td>
+                <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirProduto(i)">Excluir</button> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <tbody>
+            <tr class= "row"*ngFor="let acompanhamento of pedido.acompanhamento;let i = index">
+                <td class="col-4"> {{ acompanhamento.descricao }} </td>
+                <td class="col-4"> {{ acompanhamento.valor }} </td>
+                <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirComplemento(i)">Excluir</button> </td>
+            </tr>
+        </tbody>
+    </table>
+ 
+    <div class="row">
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="Cliente" placeholder="Cliente" [(ngModel)]="pedido.cliente">
+            <label for="Cliente">Cliente</label>
+        </div>
+
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="Funcionario" placeholder="Funcionario" [(ngModel)]="pedido.funcionario">
+            <label for="Funcionario">Funcionario</label>
+        </div>
+    </div>  
+
+        <select class="form-select form-select-lg mb-3" name="entregar">
+            <option value="true">Entregar</option>
+            <option value="false">Não entregar</option>
+        </select>
+
+        <select class="form-select form-select-lg mb-3" name="situacao">
+            <option value="DINHEIRO">Dinheiro</option>
+            <option value="PIX">Pix</option>
+            <option value="CARTAO_CREDITO">Cartao de crédito</option>
+            <option value="CARTAO_DEBITO">Cartão de debíto</option>
+        </select>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="descricao" placeholder="Descrição" [(ngModel)]="pedido.observacao">
+        <label for="Descrição">Observações do pedido</label>
+    </div>
+
+    <button type="button" class="btn btn-outline-success mb-3 col-4" (click)="lancarItens(adicionarProduto)">Lançar produto</button>
+    <button type="button" class="btn btn-outline-success mb-3 col-4" (click)="lancarItens(adicionarAcompanhamento)">Lançar acompanhamento</button> 
+
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+
+
+
+<ng-template #adicionarProduto let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Adicionar produto</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-produtolist [modoLancamento]="true" (retorno)="retornoProdutoList($event)" ></app-produtolist>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #adicionarAcompanhamento let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Adicionar produto</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-acompanhamentolist [modoLancamento]="true" (retorno)="retornoAcompanhamentoList($event)" ></app-acompanhamentolist>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

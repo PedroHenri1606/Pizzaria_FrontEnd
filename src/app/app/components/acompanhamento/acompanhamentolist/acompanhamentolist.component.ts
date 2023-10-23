@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
 import { AcompanhamentoService } from 'src/app/app/service/acompanhamento/acompanhamento.service';
@@ -12,6 +12,9 @@ import { AcompanhamentoService } from 'src/app/app/service/acompanhamento/acompa
 export class AcompanhamentolistComponent {
 
   lista: Acompanhamento[] = [];
+
+  @Output() retorno = new EventEmitter<Acompanhamento>();
+  @Input() modoLancamento: boolean = false;
 
   acompanhamentoSelecionado!: Acompanhamento;
   indiceSelecionado!: number;
@@ -70,5 +73,9 @@ export class AcompanhamentolistComponent {
   adicionarOuEditar(acompanhamento: Acompanhamento){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  lancamento(produto: Acompanhamento){
+    this.retorno.emit(produto);
   }
 }

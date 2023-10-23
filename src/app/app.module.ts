@@ -15,8 +15,6 @@ import { ProdutodetailsComponent } from './app/components/produto/produtodetails
 import { ProdutolistComponent } from './app/components/produto/produtolist/produtolist.component';
 import { AcompanhamentolistComponent } from './app/components/acompanhamento/acompanhamentolist/acompanhamentolist.component';
 import { AcompanhamentodetailsComponent } from './app/components/acompanhamento/acompanhamentodetails/acompanhamentodetails.component';
-import { AcompanhamentoPedidolistComponent } from './app/components/acompanhamento-pedido/acompanhamento-pedidolist/acompanhamento-pedidolist.component';
-import { AcompanhamentoPedidodetailsComponent } from './app/components/acompanhamento-pedido/acompanhamento-pedidodetails/acompanhamento-pedidodetails.component';
 import { ClientelistComponent } from './app/components/cliente/clientelist/clientelist.component';
 import { ClientedetailsComponent } from './app/components/cliente/clientedetails/clientedetails.component';
 import { EnderecolistComponent } from './app/components/endereco/enderecolist/enderecolist.component';
@@ -25,8 +23,7 @@ import { FuncionariolistComponent } from './app/components/funcionario/funcionar
 import { FuncionariodetailsComponent } from './app/components/funcionario/funcionariodetails/funcionariodetails.component';
 import { PedidolistComponent } from './app/components/pedido/pedidolist/pedidolist.component';
 import { PedidodetailsComponent } from './app/components/pedido/pedidodetails/pedidodetails.component';
-import { ProdutoPedidolistComponent } from './app/components/produto-pedido/produto-pedidolist/produto-pedidolist.component';
-import { ProdutoPedidodetailsComponent } from './app/components/produto-pedido/produto-pedidodetails/produto-pedidodetails.component';
+
 import { SaborlistComponent } from './app/components/sabor/saborlist/saborlist.component';
 import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabordetails.component';
 
@@ -42,8 +39,6 @@ import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabor
     ProdutodetailsComponent,
     AcompanhamentolistComponent,
     AcompanhamentodetailsComponent,
-    AcompanhamentoPedidolistComponent,
-    AcompanhamentoPedidodetailsComponent,
     ClientelistComponent,
     ClientedetailsComponent,
     EnderecolistComponent,
@@ -52,8 +47,6 @@ import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabor
     FuncionariodetailsComponent,
     PedidolistComponent,
     PedidodetailsComponent,
-    ProdutoPedidolistComponent,
-    ProdutoPedidodetailsComponent,
     SaborlistComponent,
     SabordetailsComponent,
   ],

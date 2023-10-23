@@ -7,7 +7,7 @@ import { ProdutoService } from 'src/app/app/service/produto/produto.service';
   templateUrl: './produtodetails.component.html',
   styleUrls: ['./produtodetails.component.scss']
 })
-export class ProdutodetailsComponent implements OnInit{
+export class ProdutodetailsComponent{
 
   @Input() produto: Produto = new Produto();
   @Output() retorno = new EventEmitter<Produto>();
@@ -15,10 +15,6 @@ export class ProdutodetailsComponent implements OnInit{
   service = inject(ProdutoService);
 
   constructor(){}
-
-  ngOnInit(): void {
-    
-  }
 
   cadastrar(){
     this.service.salvar(this.produto).subscribe({
