@@ -21,5 +21,42 @@
         <option value="false">Inativo</option>
       </select>
 
+      <table class="table">
+        <thead>
+            <tr class="row">
+                <th class="col-3">Logadouro</th>
+                <th class="col-3">Numero</th>
+                <th class="col-3">Bairro</th>
+                <th class="col-3">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class= "row"*ngFor="let endereco of cliente.enderecos;let i = index">
+                <td class="col-3"> {{ endereco.logadouro }} </td>
+                <td class="col-3"> {{ endereco.numero }} </td>
+                <td class="col-3"> {{ endereco.bairro }} </td>
+                <td class="col-3"> <button type="button" class="btn btn-outline-danger">Excluir</button> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-outline-success dimensaoBotao" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
+
+
     <button class= "btn btn-outline-success"> Salvar</button>
 </form>
+
+<ng-template #cadastrarEndereco let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Adicionar endereço</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-enderecodetails> </app-enderecodetails>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

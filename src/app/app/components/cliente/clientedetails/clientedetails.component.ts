@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Cliente } from 'src/app/app/model/Cliente';
 import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
 
@@ -13,6 +14,9 @@ export class ClientedetailsComponent implements OnInit {
   @Output() retorno = new EventEmitter<Cliente>();
 
   service = inject(ClienteService);
+
+  modalService = inject(NgbModal);
+  modalRef!: NgbModalRef;
 
   constructor(){}
 
@@ -30,5 +34,9 @@ export class ClientedetailsComponent implements OnInit {
         console.log(erro);
       }
     });
+  }
+
+  adicionarEndereco(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 }

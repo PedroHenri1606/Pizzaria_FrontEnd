@@ -1,1 +1,23 @@
-<p>enderecodetails works!</p>
+<form (ngSubmit)="salvar()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="endereco.logadouro">
+        <label for="Nome">Logadouro</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="endereco.bairro">
+        <label for="Nome">Bairro</label>
+    </div>
+
+    <div class="row">
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="CPF" placeholder="CPF" [(ngModel)]="endereco.numero">
+            <label for="CPF">Numero</label>
+        </div>
+
+        <div class="form-floating mb-3 col-6">
+            <input type="text" class="form-control" name="Telefone" placeholder="Telefone" [(ngModel)]="endereco.cep">
+            <label for="Telefone">CEP</label>
+        </div>
+    </div>
+</form>
