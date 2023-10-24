@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject} from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Funcionario } from 'src/app/app/model/Funcionario';
 import { FuncionarioService } from 'src/app/app/service/funcionario/funcionario.service';
@@ -10,6 +10,9 @@ import { FuncionarioService } from 'src/app/app/service/funcionario/funcionario.
 })
 export class FuncionariolistComponent {
   
+  @Output() retorno = new EventEmitter<Funcionario>();
+  @Input() modoLancamento: boolean = false;
+
   lista: Funcionario[] = [];
 
   indiceSelecionado!: number;
@@ -70,5 +73,9 @@ export class FuncionariolistComponent {
   adicionarOuEditar(funcionario: Funcionario){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  lancamento(funcionario: Funcionario){
+    this.retorno.emit(funcionario);
   }
 }

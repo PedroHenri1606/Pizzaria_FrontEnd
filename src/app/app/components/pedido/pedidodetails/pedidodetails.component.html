@@ -25,26 +25,43 @@
                 <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirComplemento(i)">Excluir</button> </td>
             </tr>
         </tbody>
+        <tr class="valorTotal">
+            <td>
+                <h6>Valor Total: {{pedido.valorTotal}}</h6>
+            </td>
+        </tr>
     </table>
  
     <div class="row">
-        <div class="form-floating mb-3 col-6">
-            <input type="text" class="form-control" name="Cliente" placeholder="Cliente" [(ngModel)]="pedido.cliente">
-            <label for="Cliente">Cliente</label>
+        <div class="col-8">
+            <div class="form-floating mb-3">
+                <input disabled type="text" class="form-control" name="Cliente" placeholder="Cliente" [(ngModel)]="nomeCliente">
+                <label for="Cliente">Cliente</label>
+            </div>
         </div>
+        <div class="col-4 alinhamento">
+            <button type="button" class="btn btn-outline-success dimensaoBotao" (click)="lancarCliente(adicionarCliente)">Selecionar cliente</button> 
+        </div>
+    </div>
 
-        <div class="form-floating mb-3 col-6">
-            <input type="text" class="form-control" name="Funcionario" placeholder="Funcionario" [(ngModel)]="pedido.funcionario">
-            <label for="Funcionario">Funcionario</label>
+    <div class="row">
+        <div class="col-8">
+            <div class="form-floating mb-3">
+                <input disabled type="text" class="form-control" name="Funcionario" placeholder="Funcionario" [(ngModel)]="nomeFuncionario">
+                <label for="Funcionario">Funcionario</label>
+            </div>
+        </div>
+        <div class="col-4 alinhamento">
+            <button type="button" class="btn btn-outline-success col-2 dimensaoBotao" (click)="lancarFuncionario(adicionarFuncionario)">Selecionar funcionario</button> 
         </div>
     </div>  
 
-        <select class="form-select form-select-lg mb-3" name="entregar">
+        <select class="form-select form-select-lg mb-3" name="entregar" [ngModel]="pedido.entregar">
             <option value="true">Entregar</option>
             <option value="false">Não entregar</option>
         </select>
 
-        <select class="form-select form-select-lg mb-3" name="situacao">
+        <select class="form-select form-select-lg mb-3" name="situacao" [ngModel]="pedido.formaDePagamento">
             <option value="DINHEIRO">Dinheiro</option>
             <option value="PIX">Pix</option>
             <option value="CARTAO_CREDITO">Cartao de crédito</option>
@@ -55,13 +72,14 @@
         <input type="text" class="form-control" name="descricao" placeholder="Descrição" [(ngModel)]="pedido.observacao">
         <label for="Descrição">Observações do pedido</label>
     </div>
+    
+    <div class="row justify-content-evenly">
+        <button type="button" class="btn btn-outline-primary mb-3 dimensaoBotao" (click)="lancarItens(adicionarProduto)">Lançar produto</button>
+        <button type="button" class="btn btn-outline-primary mb-3 dimensaoBotao" (click)="lancarItens(adicionarAcompanhamento)">Lançar acompanhamento</button> 
+        <button type="submit" class="btn btn-outline-success dimensaoBotao">Gerar pedido</button>
+    </div>
 
-    <button type="button" class="btn btn-outline-success mb-3 col-4" (click)="lancarItens(adicionarProduto)">Lançar produto</button>
-    <button type="button" class="btn btn-outline-success mb-3 col-4" (click)="lancarItens(adicionarAcompanhamento)">Lançar acompanhamento</button> 
-
-
-
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    
 </form>
 
 
@@ -84,12 +102,42 @@
 
 <ng-template #adicionarAcompanhamento let-modal>
     <div class="modal-header">
-        <h4 class="modal-title">Adicionar produto</h4>
+        <h4 class="modal-title">Adicionar acompanhamento</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
        
         <app-acompanhamentolist [modoLancamento]="true" (retorno)="retornoAcompanhamentoList($event)" ></app-acompanhamentolist>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #adicionarCliente let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Selecionar cliente</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-clientelist [modoLancamento]="true" (retorno)="retornoClienteList($event)" ></app-clientelist>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #adicionarFuncionario let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Selecionar funcionario</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-funcionariolist [modoLancamento]="true" (retorno)="retornoFuncionarioList($event)" ></app-funcionariolist>
         
     </div>
     <div class="modal-footer">

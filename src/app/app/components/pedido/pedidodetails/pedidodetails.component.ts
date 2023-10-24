@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
+import { Cliente } from 'src/app/app/model/Cliente';
+import { Funcionario } from 'src/app/app/model/Funcionario';
 import { Pedido } from 'src/app/app/model/Pedido';
 import { Produto } from 'src/app/app/model/Produto';
 import { PedidoService } from 'src/app/app/service/pedido/pedido.service';
@@ -19,6 +21,9 @@ export class PedidodetailsComponent {
   modalRef!: NgbModalRef;
 
   service = inject(PedidoService);
+
+  @Input() nomeFuncionario: string = "";
+  @Input() nomeCliente: string = "";
 
   constructor(){
 
@@ -52,15 +57,37 @@ export class PedidodetailsComponent {
     this.modalRef.dismiss();
     }
 
-    retornoAcompanhamentoList(acompanhamento: Acompanhamento){
-      if (this.pedido.item == null)
+  retornoAcompanhamentoList(acompanhamento: Acompanhamento){
+    if (this.pedido.item == null)
         this.pedido.item = [];
   
-      this.pedido.acompanhamento.push(acompanhamento);
-      this.modalRef.dismiss();
-      }
+    this.pedido.acompanhamento.push(acompanhamento);
+    this.modalRef.dismiss();
+    }
+
+  retornoClienteList(cliente: Cliente){
+    this.pedido.cliente = cliente;
+    this.nomeCliente = cliente.nome;
+    this.modalRef.dismiss();
+  }
+
+  retornoFuncionarioList(funcionario: Funcionario){
+    this.pedido.funcionario = funcionario;
+    this.nomeFuncionario = funcionario.nome;
+    this.modalRef.dismiss();
+  }
 
   lancarItens(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
+  }
+
+  
+  lancarCliente(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
+  }
+
+  
+  lancarFuncionario(modal: any){
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 }

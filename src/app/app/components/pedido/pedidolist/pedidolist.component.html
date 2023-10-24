@@ -27,8 +27,8 @@
         <tbody>
             <tr scope="row" *ngFor="let pedido of lista">
                 <td>{{pedido.id}}</td>
-                <td>{{pedido.cliente}}</td>
-                <td>{{pedido.funcionario}}</td>
+                <td>{{pedido.cliente.nome}}</td>
+                <td>{{pedido.funcionario.nome}}</td>
                 <td>{{pedido.situacaoPedido}}</td>
                 <td>
                     <button type="button" class="btn btn-outline-warning botoes" (click)="editar(detalhar,pedido.id,pedido)">Detalhes</button>
@@ -61,7 +61,7 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-pedidodetails [pedido]="pedidoSelecionado" (retorno)="adicionarOuEditar($event)" ></app-pedidodetails>            
+        <app-pedidodetails [nomeCliente]="pedidoSelecionado.cliente.nome" [nomeFuncionario]="pedidoSelecionado.funcionario.nome" [pedido]="pedidoSelecionado" (retorno)="adicionarOuEditar($event)" ></app-pedidodetails>            
 	</div>
 	<div class="modal-footer">
 		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>

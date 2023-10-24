@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Cliente } from 'src/app/app/model/Cliente';
 import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
@@ -11,6 +11,9 @@ import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
 })
 export class ClientelistComponent {
 
+  @Output() retorno = new EventEmitter<Cliente>();
+  @Input() modoLancamento: boolean = false;
+
   lista: Cliente[] = [];
 
   modalService = inject(NgbModal);
@@ -21,7 +24,7 @@ export class ClientelistComponent {
   clienteSelecionado!: Cliente;
 
   constructor(){
-
+    this.listarTodos();
   }
 
   listarTodos(){
@@ -71,5 +74,10 @@ export class ClientelistComponent {
   adicionarOuEditar(cliente: Cliente){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  
+  lancamento(cliente: Cliente){
+    this.retorno.emit(cliente);
   }
 }
