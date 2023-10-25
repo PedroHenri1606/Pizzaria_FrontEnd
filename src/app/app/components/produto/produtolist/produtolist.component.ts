@@ -12,9 +12,8 @@ export class ProdutolistComponent {
 
   lista: Produto[] = [];
 
-  @Output() retorno = new EventEmitter<Produto>();
   @Input() modoLancamento: boolean = false;
-
+  @Output() retorno = new EventEmitter<Produto>();
 
   indiceSelecionado!: number;
   produtoSelecionado: Produto = new Produto();

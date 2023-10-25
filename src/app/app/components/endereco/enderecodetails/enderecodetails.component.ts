@@ -16,7 +16,7 @@ export class EnderecodetailsComponent {
 
   constructor(){}
 
-  salvar(){
+  cadastrar(){
     this.service.cadastrar(this.endereco).subscribe({
       next: endereco => {
         this.retorno.emit(endereco);

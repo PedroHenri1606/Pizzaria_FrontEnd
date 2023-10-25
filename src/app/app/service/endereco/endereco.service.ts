@@ -26,6 +26,10 @@ export class EnderecoService {
     return this.http.get<Endereco[]>(this.API + `/listar`);
   }
 
+  listarPorClienteId(id: number): Observable<Endereco[]>{
+    return this.http.get<Endereco[]>(this.API + `/listar/cliente?id=${id}`);
+  }
+
   editar(enderecoNovo: Partial<Endereco>){
     return this.http.put<Endereco>(this.API + `/editar?id=${enderecoNovo.id}`, enderecoNovo);
   }

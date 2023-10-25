@@ -33,7 +33,7 @@
                 <td>{{funcionario.telefone}}</td>
                 <td>{{funcionario.ativo}}</td>
                 <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, funcionario.id, funcionario)">Editar</button> </td>
-                <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(funcionario)">Lançar</button> </td>
+                <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(funcionario  )">Lançar</button> </td>
             </tr>
         </tbody>
     </table>

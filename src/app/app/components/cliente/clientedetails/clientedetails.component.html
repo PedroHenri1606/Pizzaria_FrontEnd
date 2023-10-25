@@ -35,7 +35,7 @@
                 <td class="col-3"> {{ endereco.logadouro }} </td>
                 <td class="col-3"> {{ endereco.numero }} </td>
                 <td class="col-3"> {{ endereco.bairro }} </td>
-                <td class="col-3"> <button type="button" class="btn btn-outline-danger">Excluir</button> </td>
+                <td class="col-3"> <button type="button" class="btn btn-outline-danger" (click)="excluirEndereco(i)">Excluir</button> </td>
             </tr>
         </tbody>
     </table>
@@ -53,7 +53,7 @@
     </div>
     <div class="modal-body">
        
-        <app-enderecodetails> </app-enderecodetails>
+        <app-enderecodetails (retorno)="retornoEnderecoList($event)"> </app-enderecodetails>
 
     </div>
     <div class="modal-footer">

@@ -1,1 +1,40 @@
-<p>enderecolist works!</p>
+<div class="tabela">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="col">Logadouro</th>
+                <th scope="col" class="col">Numero</th>
+                <th scope="col" class="col">Bairro</th>
+                <th scope="col" class="col">CEP</th>
+                <th scope="col" class="col">Opção</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr scope="row" *ngFor="let endereco of lista">
+                <td>{{endereco.logadouro}}</td>
+                <td>{{endereco.numero}}</td>
+                <td>{{endereco.bairro}}</td>
+                <td>{{endereco.cep}}</td>
+                <td> <button type="button" class="btn btn-outline-warning" (click)="editar(adicionarEndereco, endereco.id, endereco)">Editar</button> </td>
+                <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(endereco)">Lançar</button> </td>
+            </tr>   
+        </tbody>
+    </table>
+</div>
+
+<ng-template #adicionarEndereco let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Detalhando endereço</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-enderecodetails [endereco]="enderecoSelecionado" (retorno)="adicionarOuEditar($event)"></app-enderecodetails>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

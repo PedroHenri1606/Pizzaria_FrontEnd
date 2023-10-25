@@ -61,7 +61,12 @@
 	</div>
 	<div class="modal-body">
 		
-        <app-pedidodetails [nomeCliente]="pedidoSelecionado.cliente.nome" [nomeFuncionario]="pedidoSelecionado.funcionario.nome" [pedido]="pedidoSelecionado" (retorno)="adicionarOuEditar($event)" ></app-pedidodetails>            
+        <app-pedidodetails [logadouroEndereco]="pedidoSelecionado.enderecoEntrega.logadouro"
+                           [numeroEndereco]="pedidoSelecionado.enderecoEntrega.numero"
+                           [bairroEndereco]="pedidoSelecionado.enderecoEntrega.bairro" 
+                           [nomeCliente]="pedidoSelecionado.cliente.nome" 
+                           [nomeFuncionario]="pedidoSelecionado.funcionario.nome" 
+                           [pedido]="pedidoSelecionado" (retorno)="adicionarOuEditar($event)" ></app-pedidodetails>            
 	</div>
 	<div class="modal-footer">
 		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>

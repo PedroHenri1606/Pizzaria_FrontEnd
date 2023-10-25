@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Cliente } from 'src/app/app/model/Cliente';
+import { Endereco } from 'src/app/app/model/Endereco';
 import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
 
 @Component({
@@ -38,5 +39,18 @@ export class ClientedetailsComponent implements OnInit {
 
   adicionarEndereco(modal: any){
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
+  }
+
+  retornoEnderecoList(endereco: Endereco){
+    if(this.cliente.enderecos == null){
+      this.cliente.enderecos = [];
+    }
+
+    this.cliente.enderecos.push(endereco);
+    this.modalRef.dismiss();
+  }
+
+  excluirEndereco(indice: number){
+    this.cliente.enderecos.splice(indice,1);
   }
 }

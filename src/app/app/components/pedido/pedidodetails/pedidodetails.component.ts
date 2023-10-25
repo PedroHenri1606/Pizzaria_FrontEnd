@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
 import { Cliente } from 'src/app/app/model/Cliente';
+import { Endereco } from 'src/app/app/model/Endereco';
 import { Funcionario } from 'src/app/app/model/Funcionario';
 import { Pedido } from 'src/app/app/model/Pedido';
 import { Produto } from 'src/app/app/model/Produto';
@@ -24,6 +25,9 @@ export class PedidodetailsComponent {
 
   @Input() nomeFuncionario: string = "";
   @Input() nomeCliente: string = "";
+  @Input() logadouroEndereco: string = "";
+  @Input() numeroEndereco: number = 0;
+  @Input() bairroEndereco: string = "";
 
   constructor(){
 
@@ -33,6 +37,7 @@ export class PedidodetailsComponent {
     this.service.salvar(this.pedido).subscribe({
       next: pedido => {
         this.retorno.emit(pedido);
+        console.log(pedido.cliente.enderecos );
       },
       error: erro => {
         alert("Erro ao tentar cadastrar um novo pedido!");
@@ -77,6 +82,14 @@ export class PedidodetailsComponent {
     this.modalRef.dismiss();
   }
 
+  retornoEndereco(endereco: Endereco){
+    this.logadouroEndereco = endereco.logadouro;
+    this.bairroEndereco = endereco.bairro;
+    this.numeroEndereco = endereco.numero;
+    this.pedido.enderecoEntrega = endereco;
+    this.modalRef.dismiss();
+  }
+
   lancarItens(modal: any){
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
@@ -88,6 +101,10 @@ export class PedidodetailsComponent {
 
   
   lancarFuncionario(modal: any){
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
+  }
+
+  lancarEndereco(modal: any){
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 }

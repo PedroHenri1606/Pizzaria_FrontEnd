@@ -1,4 +1,4 @@
-<form (ngSubmit)="salvar()">
+<form (ngSubmit)="cadastrar()">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="endereco.logadouro">
         <label for="Nome">Logadouro</label>
@@ -20,4 +20,6 @@
             <label for="Telefone">CEP</label>
         </div>
     </div>
+
+    <button class= "btn btn-outline-success"> Salvar</button>
 </form>

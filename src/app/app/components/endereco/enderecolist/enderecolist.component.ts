@@ -1,4 +1,4 @@
-import { Component, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Endereco } from 'src/app/app/model/Endereco';
 import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
@@ -10,10 +10,12 @@ import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
 })
 export class EnderecolistComponent {
 
-  @Input() endereco: Endereco = new Endereco();
-  @Output() modoLancamento: boolean = false;
-
   lista: Endereco[] = [];
+
+  
+
+  @Input() modoLancamento: boolean = false;
+  @Output() retorno = new EventEmitter<Endereco>();
 
   enderecoSelecionado!: Endereco;
   indiceSelecionado!: number;
@@ -33,6 +35,18 @@ export class EnderecolistComponent {
       },
       error: erro => {
         alert("Erro ao carregar os dados da lista de endereços!");
+        console.log(erro);
+      }
+    });
+  }
+
+    listarPorClienteId(id: number){
+    this.service.listarPorClienteId(id).subscribe({
+      next: lista => {
+        this.lista = lista;
+      },
+      error: erro => {
+        alert("Erro ao carregar os dados da lista!");
         console.log(erro);
       }
     });
@@ -71,5 +85,9 @@ export class EnderecolistComponent {
   adicionarOuEditar(endereco: Endereco){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  lancamento(endereco: Endereco){
+    this.retorno.emit(endereco);
   }
 }
