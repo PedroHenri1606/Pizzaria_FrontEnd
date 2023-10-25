@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Sabor } from 'src/app/app/model/Sabor';
 import { SaborService } from 'src/app/app/service/sabor/sabor.service';
@@ -11,6 +11,9 @@ import { SaborService } from 'src/app/app/service/sabor/sabor.service';
 export class SaborlistComponent {
 
   lista: Sabor[] = [];
+
+  @Input() modoLancamento: boolean = false;
+  @Output() retorno = new EventEmitter<Sabor>;
 
   indiceSelecionado!: number;
   saborSelecionado!: Sabor;
@@ -69,5 +72,9 @@ export class SaborlistComponent {
   adicionarOuEditar(sabor: Sabor){
     this.listarTodos();
     this.modalService.dismissAll();
+  }
+
+  lancamento(sabor: Sabor){
+    this.retorno.emit(sabor);
   }
 }

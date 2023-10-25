@@ -26,6 +26,8 @@ import { PedidodetailsComponent } from './app/components/pedido/pedidodetails/pe
 
 import { SaborlistComponent } from './app/components/sabor/saborlist/saborlist.component';
 import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabordetails.component';
+import { ProdutoPedidolistComponent } from './app/components/produtoPedido/produto-pedidolist/produto-pedidolist.component';
+import { ProdutoPedidodetailsComponent } from './app/components/produtoPedido/produto-pedidodetails/produto-pedidodetails.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabor
     PedidodetailsComponent,
     SaborlistComponent,
     SabordetailsComponent,
+    ProdutoPedidolistComponent,
+    ProdutoPedidodetailsComponent,
   ],
   imports: [
     BrowserModule,

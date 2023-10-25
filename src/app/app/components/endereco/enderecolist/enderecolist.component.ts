@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Cliente } from 'src/app/app/model/Cliente';
 import { Endereco } from 'src/app/app/model/Endereco';
 import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
 
@@ -12,7 +13,7 @@ export class EnderecolistComponent {
 
   lista: Endereco[] = [];
 
-  
+  @Input() clienteSelecionado!: Cliente;
 
   @Input() modoLancamento: boolean = false;
   @Output() retorno = new EventEmitter<Endereco>();

@@ -2,7 +2,7 @@ import { Acompanhamento } from "./Acompanhamento";
 import { Cliente } from "./Cliente";
 import { Endereco } from "./Endereco";
 import { Funcionario } from "./Funcionario";
-import { Produto } from "./Produto";
+import { ProdutoPedido } from "./ProdutoPedido";
 import { SituacaoPedido } from "./enum/SituacaoPedido";
 
 export class Pedido{
@@ -10,7 +10,7 @@ export class Pedido{
     id!: number;
     ativo!: boolean;
     cliente!: Cliente;
-    item: Produto[] = [];
+    item: ProdutoPedido[] = [];
     acompanhamento: Acompanhamento[] = [];
     enderecoEntrega!: Endereco;
     funcionario!: Funcionario;

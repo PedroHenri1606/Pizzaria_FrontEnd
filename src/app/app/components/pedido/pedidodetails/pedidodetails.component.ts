@@ -6,6 +6,7 @@ import { Endereco } from 'src/app/app/model/Endereco';
 import { Funcionario } from 'src/app/app/model/Funcionario';
 import { Pedido } from 'src/app/app/model/Pedido';
 import { Produto } from 'src/app/app/model/Produto';
+import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
 import { PedidoService } from 'src/app/app/service/pedido/pedido.service';
 
 @Component({
@@ -54,11 +55,11 @@ export class PedidodetailsComponent {
     this.pedido.acompanhamento.splice(indice,1);
   }
 
-  retornoProdutoList(produto: Produto){
+  retornoProdutoPedidoList(produtoPedido: ProdutoPedido){
     if (this.pedido.item == null)
       this.pedido.item = [];
 
-    this.pedido.item.push(produto);
+    this.pedido.item.push(produtoPedido);
     this.modalRef.dismiss();
     }
 

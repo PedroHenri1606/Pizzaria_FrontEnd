@@ -10,8 +10,8 @@
         </thead>
         <tbody>
             <tr class= "row"*ngFor="let produto of pedido.item;let i = index">
-                <td class="col-4"> {{ produto.descricao }} </td>
-                <td class="col-4"> {{ produto.valor }} </td>
+                <td class="col-4"> {{ produto.produto.descricao }} </td>
+                <td class="col-4"> {{ produto.quantidade }} </td>
                 <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirProduto(i)">Excluir</button> </td>
             </tr>
         </tbody>
@@ -122,7 +122,7 @@
     </div>
     <div class="modal-body">
        
-        <app-produtolist [modoLancamento]="true" (retorno)="retornoProdutoList($event)" ></app-produtolist>
+        <app-produto-pedidodetails (retorno)="retornoProdutoPedidoList($event)"> </app-produto-pedidodetails>
         
     </div>
     <div class="modal-footer">
