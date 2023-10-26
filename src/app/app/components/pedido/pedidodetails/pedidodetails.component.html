@@ -3,16 +3,17 @@
     <table class="table">
         <thead>
             <tr class="row">
-                <th class="col-4">Nome</th>
-                <th class="col-4">Valor</th>
-                <th class="col-4">Opções</th>
+                <th class="col-3">Nome</th>
+                <th class="col-3">Quantidade</th>
+                <th class="col-6">Opções</th>
             </tr>
         </thead>
         <tbody>
-            <tr class= "row"*ngFor="let produto of pedido.item;let i = index">
-                <td class="col-4"> {{ produto.produto.descricao }} </td>
-                <td class="col-4"> {{ produto.quantidade }} </td>
-                <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirProduto(i)">Excluir</button> </td>
+            <tr class= "row"*ngFor="let item of pedido.item;let i = index">
+                <td class="col-3"> {{ item.produto.descricao }} </td>
+                <td class="col-3"> {{ item.quantidade }} </td>
+                <td class="col-3"> <button type="button" class="btn btn-outline-danger" (click)="excluirProduto(i)">Excluir</button> </td>
+                <td class="col-3"> <button type="button" class="btn btn-outline-warning" (click)="detalharProdutoPedido(detalharProduto)">Detalhar</button> </td>
             </tr>
         </tbody>
     </table>
@@ -20,9 +21,9 @@
     <table class="table">
         <tbody>
             <tr class= "row"*ngFor="let acompanhamento of pedido.acompanhamento;let i = index">
-                <td class="col-4"> {{ acompanhamento.descricao }} </td>
-                <td class="col-4"> {{ acompanhamento.valor }} </td>
-                <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirComplemento(i)">Excluir</button> </td>
+                <td class="col-3"> {{ acompanhamento.descricao }} </td>
+                <td class="col-3"> {{ acompanhamento.valor }} </td>
+                <td class="col-6"> <button type="button" class="btn btn-outline-danger" (click)="excluirComplemento(i)">Excluir</button> </td>
             </tr>
         </tbody>
         <tr class="valorTotal">
@@ -130,6 +131,26 @@
     </div>
 </ng-template>
 
+<ng-template #detalharProduto let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Detalhar produto</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-produto-pedidodetails 
+                                   [nomeProduto]="pedido.item[0].produto.descricao" 
+                                   [produtoPedido]="pedido.item[0]" 
+                                   (retorno)="retornoProdutoPedidoList($event)"> 
+        </app-produto-pedidodetails>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+
 <ng-template #adicionarAcompanhamento let-modal>
     <div class="modal-header">
         <h4 class="modal-title">Adicionar acompanhamento</h4>
@@ -182,7 +203,7 @@
     </div>
     <div class="modal-body">
        
-        <app-enderecolist  [modoLancamento]="true" (retorno)="retornoEndereco($event)" ></app-enderecolist>
+        <app-enderecolist [lista]="pedido.cliente.enderecos" [modoLancamento]="true" (retorno)="retornoEndereco($event)" ></app-enderecolist>
         
     </div>
     <div class="modal-footer">

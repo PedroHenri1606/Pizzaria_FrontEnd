@@ -1,46 +1,48 @@
-<div class="row">
-    <div class="col-8">
-        <div class="form-floating mb-3">
-            <input disabled type="text" class="form-control" name="Produto" placeholder="Produto" >
-            <label for="Produto">Produto</label>
+<form (ngSubmit)="salvar()">
+    <div class="row">
+        <div class="col-8">
+            <div class="form-floating mb-3">
+                <input disabled type="text" class="form-control" name="Produto" placeholder="Produto" [(ngModel)]="nomeProduto" >
+                <label for="Produto">Produto</label>
+            </div>
+        </div>
+        <div class="col-4 alinhamento">
+            <button type="button" class="btn btn-outline-success dimensaoBotao" (click)="lancarProduto(adicionarProduto)">Selecionar produto</button> 
         </div>
     </div>
-    <div class="col-4 alinhamento">
-        <button type="button" class="btn btn-outline-success dimensaoBotao" (click)="lancarProduto(adicionarProduto)">Selecionar produto</button> 
+
+    <table class="table">
+        <thead>
+            <tr class="row">
+                <th class="col-4">Nome</th>
+                <th class="col-4">Descrição</th>
+                <th class="col-4">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class= "row"*ngFor="let sabor of produtoPedido.sabores;let i = index">
+                <td class="col-4"> {{ sabor.nome }} </td>
+                <td class="col-4"> {{ sabor.descricao }} </td>
+                <td class="col-4"> <button type="button" class="btn btn-outline-danger" (click)="excluirSabor(i)">Excluir</button> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="produtoPedido.quantidade">
+        <label for="Nome">Quantidade</label>
     </div>
-</div>
 
-<table class="table">
-    <thead>
-        <tr class="row">
-            <th class="col-4">Nome</th>
-            <th class="col-4">Descrição</th>
-            <th class="col-4">Opções</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class= "row"*ngFor="let sabor of produtoPedido.sabores;let i = index">
-            <td class="col-4"> {{ sabor.nome }} </td>
-            <td class="col-4"> {{ sabor.descricao }} </td>
-            <td class="col-4"> <button type="button" class="btn btn-outline-danger">Excluir</button> </td>
-        </tr>
-    </tbody>
-</table>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="observacao" placeholder="observacao" [(ngModel)]="produtoPedido.observacao" >
+        <label for="Nome">Observação</label>
+    </div>
 
-<div class="form-floating mb-3">
-    <input type="number" class="form-control" name="Nome" placeholder="Nome" >
-    <label for="Nome">Quantidade</label>
-</div>
-
-<div class="form-floating mb-3">
-    <input type="text" class="form-control" name="Nome" placeholder="Nome" >
-    <label for="Nome">Observação</label>
-</div>
-
-<button type="button" class="btn btn-outline-success col-2 dimensaoBotao" (click)="lancarSabor(adicionarSabor)">Selecionar sabor</button>
+    <button type="button" class="btn btn-outline-success col-2 dimensaoBotao" (click)="lancarSabor(adicionarSabor)">Selecionar sabor</button>
 
 
-<button class= "btn btn-outline-success"> Salvar</button>
+    <button class= "btn btn-outline-success"> Salvar</button>
+</form>
 
 <ng-template #adicionarProduto let-modal>
     <div class="modal-header">
@@ -49,7 +51,7 @@
     </div>
     <div class="modal-body">
        
-        <app-produtolist [modoLancamento]="true" (retorno)="retornoProdutoList($event)" ></app-produtolist>
+        <app-produtolist  [modoLancamento]="true" (retorno)="retornoProdutoList($event)" ></app-produtolist>
         
     </div>
     <div class="modal-footer">
@@ -59,7 +61,7 @@
 
 <ng-template #adicionarSabor let-modal>
     <div class="modal-header">
-        <h4 class="modal-title">Selecionar cliente</h4>
+        <h4 class="modal-title">Selecionar sabor</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">

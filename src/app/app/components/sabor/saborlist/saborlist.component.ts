@@ -71,7 +71,7 @@ export class SaborlistComponent {
 
   adicionarOuEditar(sabor: Sabor){
     this.listarTodos();
-    this.modalService.dismissAll();
+    this.modalRef.dismiss();
   }
 
   lancamento(sabor: Sabor){

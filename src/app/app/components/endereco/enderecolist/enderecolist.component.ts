@@ -11,9 +11,7 @@ import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
 })
 export class EnderecolistComponent {
 
-  lista: Endereco[] = [];
-
-  @Input() clienteSelecionado!: Cliente;
+  @Input() lista: Endereco[] = [];
 
   @Input() modoLancamento: boolean = false;
   @Output() retorno = new EventEmitter<Endereco>();
@@ -25,8 +23,10 @@ export class EnderecolistComponent {
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
 
+  @Input() clienteId!: number;
+
   constructor(){
-    this.listarTodos();
+   
   }
 
   listarTodos(){

@@ -3,6 +3,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Produto } from 'src/app/app/model/Produto';
 import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
 import { Sabor } from 'src/app/app/model/Sabor';
+import { ProdutoPedidoService } from 'src/app/app/service/produto-pedido/produto-pedido.service';
 
 @Component({
   selector: 'app-produto-pedidodetails',
@@ -14,11 +15,30 @@ export class ProdutoPedidodetailsComponent {
   @Input() produtoPedido: ProdutoPedido = new ProdutoPedido();
   @Output() retorno = new EventEmitter<ProdutoPedido>();
 
+  service = inject(ProdutoPedidoService);
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
 
+  @Input() nomeProduto!: String;
+
+  salvar(){
+    this.service.salvar(this.produtoPedido).subscribe({
+      next: produtoPedido => {
+        this.retorno.emit(produtoPedido);
+      },
+      error: erro => {
+        alert("Erro ao tentar cadastrar um novo pedido!");
+        console.log(erro);
+      }
+    });
+  }
+
   lancarProduto(modal: any){
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
+  }
+
+  excluirSabor(indice: number){
+    this.produtoPedido.sabores.splice(indice,1);
   }
 
   lancarSabor(modal: any){
@@ -29,6 +49,8 @@ export class ProdutoPedidodetailsComponent {
     if (this.produtoPedido.produto == null)
 
     this.produtoPedido.produto = produto;
+    this.nomeProduto = produto.descricao;
+    console.log(produto.id);
     this.modalRef.dismiss();
     }
 

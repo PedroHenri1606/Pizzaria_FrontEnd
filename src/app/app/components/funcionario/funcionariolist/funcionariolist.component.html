@@ -1,4 +1,4 @@
-<div class="opcoes">
+<div class="container">
 
     <div class="row justify-content-end">
         <div class="col-2">
@@ -8,35 +8,35 @@
         <button class= "btn btn-outline-success botoes col-1 me-5" type="submit" (click)="buscarPorId(detalhar, indiceSelecionado)"> Buscar</button>
         <button class= "btn btn-outline-success botoes col-2" (click)="salvar(cadastrar)">Adicionar Funcionario</button>
     </div>
-</div>
 
-<div class="tabela">
-    <table class="table">
+    <div class="tabela">
+        <table class="table">
 
-        <thead>
-            <tr>
-                <th scope="col" class="col">Id</th>    
-                <th scope="col" class="col">Nome</th>
-                <th scope="col" class="col">CPF</th>
-                <th scope="col" class="col">Telefone</th>
-                <th scope="col" class="col">Ativo</th>
-                <th scope="col" class="col">Opções</th>
+            <thead>
+                <tr>
+                    <th scope="col" class="col">Id</th>    
+                    <th scope="col" class="col">Nome</th>
+                    <th scope="col" class="col">CPF</th>
+                    <th scope="col" class="col">Telefone</th>
+                    <th scope="col" class="col">Ativo</th>
+                    <th scope="col" class="col">Opções</th>
 
-            </tr>
-        </thead>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr scope="row" *ngFor="let funcionario of lista">
-                <td>{{funcionario.id}}</td>
-                <td>{{funcionario.nome}}</td>
-                <td>{{funcionario.cpf}}</td>
-                <td>{{funcionario.telefone}}</td>
-                <td>{{funcionario.ativo}}</td>
-                <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, funcionario.id, funcionario)">Editar</button> </td>
-                <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(funcionario  )">Lançar</button> </td>
-            </tr>
-        </tbody>
-    </table>
+            <tbody>
+                <tr scope="row" *ngFor="let funcionario of lista">
+                    <td>{{funcionario.id}}</td>
+                    <td>{{funcionario.nome}}</td>
+                    <td>{{funcionario.cpf}}</td>
+                    <td>{{funcionario.telefone}}</td>
+                    <td>{{funcionario.ativo}}</td>
+                    <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, funcionario.id, funcionario)">Editar</button> </td>
+                    <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(funcionario  )">Lançar</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <ng-template #cadastrar let-modal>

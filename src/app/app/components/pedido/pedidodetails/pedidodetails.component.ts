@@ -30,6 +30,7 @@ export class PedidodetailsComponent {
   @Input() numeroEndereco: number = 0;
   @Input() bairroEndereco: string = "";
 
+
   constructor(){
 
   }
@@ -38,7 +39,7 @@ export class PedidodetailsComponent {
     this.service.salvar(this.pedido).subscribe({
       next: pedido => {
         this.retorno.emit(pedido);
-        console.log(pedido.cliente.enderecos );
+        console.log(pedido.item);
       },
       error: erro => {
         alert("Erro ao tentar cadastrar um novo pedido!");
@@ -49,6 +50,11 @@ export class PedidodetailsComponent {
 
   excluirProduto( indice: number){
     this.pedido.item.splice(indice,1);
+  }
+
+  detalharProdutoPedido(modal: any){
+    console.log(this.pedido.item);
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 
   excluirComplemento( indice: number){
