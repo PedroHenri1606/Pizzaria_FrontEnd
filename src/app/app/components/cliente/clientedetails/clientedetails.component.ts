@@ -19,6 +19,8 @@ export class ClientedetailsComponent implements OnInit {
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
 
+  enderecoSelecionado!: Endereco;
+
   constructor(){}
 
   ngOnInit(): void {
@@ -52,5 +54,10 @@ export class ClientedetailsComponent implements OnInit {
 
   excluirEndereco(indice: number){
     this.cliente.enderecos.splice(indice,1);
+  }
+
+  editarEndereco(modal: any, endereco: Endereco){
+    this.enderecoSelecionado = endereco;
+    this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 }

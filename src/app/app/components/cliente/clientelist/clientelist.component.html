@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row justify-content-end">
+    <div class="row justify-content-end ">
         <div class="col-2">
             <input type="search" class="form-control buscarId" placeholder="Buscar por Id" aria-label="search" [(ngModel)]="indiceSelecionado">
         </div>
@@ -10,7 +10,7 @@
     </div>
 
 
-    <div class="tabela">
+    <div class="text-center pt-5">
         <table class="table">
 
             <thead>
@@ -57,7 +57,7 @@
 
 <ng-template #detalhar let-modal>
     <div class="modal-header">
-		<h4 class="modal-title">Detalhar cliente</h4>
+		<h4 class="modal-title">Detalhando cliente</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">

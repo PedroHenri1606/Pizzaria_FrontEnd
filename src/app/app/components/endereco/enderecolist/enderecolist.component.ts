@@ -73,7 +73,7 @@ export class EnderecolistComponent {
 
   editar(modal: any, id: number, endereco: Endereco){
     this.indiceSelecionado = id;
-    this.enderecoSelecionado = Object.assign({}, endereco);
+    this.enderecoSelecionado = endereco;
     this.modalRef = this.modalService.open(modal, {size: 'lg'});
   }
 

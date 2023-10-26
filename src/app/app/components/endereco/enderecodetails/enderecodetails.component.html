@@ -1,23 +1,23 @@
 <form (ngSubmit)="cadastrar()">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="endereco.logadouro">
-        <label for="Nome">Logadouro</label>
+        <input type="text" class="form-control" name="logadouro" placeholder="logadouro" [(ngModel)]="endereco.logadouro">
+        <label for="logadouro">Logadouro</label>
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="Nome" placeholder="Nome" [(ngModel)]="endereco.bairro">
-        <label for="Nome">Bairro</label>
+        <input type="text" class="form-control" name="bairro" placeholder="bairro" [(ngModel)]="endereco.bairro">
+        <label for="bairro">Bairro</label>
     </div>
 
     <div class="row">
         <div class="form-floating mb-3 col-6">
-            <input type="text" class="form-control" name="CPF" placeholder="CPF" [(ngModel)]="endereco.numero">
-            <label for="CPF">Numero</label>
+            <input type="text" class="form-control" name="numero" placeholder="numero" [(ngModel)]="endereco.numero">
+            <label for="numero">Numero</label>
         </div>
 
         <div class="form-floating mb-3 col-6">
-            <input type="text" class="form-control" name="Telefone" placeholder="Telefone" [(ngModel)]="endereco.cep">
-            <label for="Telefone">CEP</label>
+            <input type="text" class="form-control" name="cep" placeholder="cep" [(ngModel)]="endereco.cep">
+            <label for="cep">CEP</label>
         </div>
     </div>
 

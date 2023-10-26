@@ -16,39 +16,39 @@
         </div>
     </div>
 
-      <select class="form-select form-select-lg mb-3" name="situacao" [(ngModel)]="cliente.ativo">
+    <select class="form-select form-select-lg mb-3" name="situacao" [(ngModel)]="cliente.ativo">
         <option value="true">Ativo</option>
         <option value="false">Inativo</option>
-      </select>
+    </select>
 
-      <table class="table">
-        <thead>
-            <tr class="row">
-                <th class="col-3">Logadouro</th>
-                <th class="col-3">Numero</th>
-                <th class="col-3">Bairro</th>
-                <th class="col-3">Opções</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class= "row"*ngFor="let endereco of cliente.enderecos;let i = index">
-                <td class="col-3"> {{ endereco.logadouro }} </td>
-                <td class="col-3"> {{ endereco.numero }} </td>
-                <td class="col-3"> {{ endereco.bairro }} </td>
-                <td class="col-3"> <button type="button" class="btn btn-outline-danger" (click)="excluirEndereco(i)">Excluir</button> </td>
-            </tr>
-        </tbody>
-    </table>
+    <app-enderecolist [lista]="cliente.enderecos" ></app-enderecolist>
 
-    <button type="button" class="btn btn-outline-success dimensaoBotao" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
-
-
-    <button class= "btn btn-outline-success"> Salvar</button>
+    <button class= "btn btn-outline-success margem"> Salvar</button>
+    <button type="button" class="btn btn-outline-primary" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
 </form>
+
+
+
+
 
 <ng-template #cadastrarEndereco let-modal>
     <div class="modal-header">
         <h4 class="modal-title">Adicionar endereço</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+       
+        <app-enderecodetails [endereco]="enderecoSelecionado" (retorno)="retornoEnderecoList($event)"> </app-enderecodetails>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #atualizarEndereco let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Editar endereço</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">

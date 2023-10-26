@@ -9,17 +9,17 @@
         <button class= "btn btn-outline-success botoes col-2" (click)="salvar(cadastrar)">Adicionar Funcionario</button>
     </div>
 
-    <div class="tabela">
+    <div class="text-center pt-5">
         <table class="table">
 
             <thead>
                 <tr>
-                    <th scope="col" class="col">Id</th>    
-                    <th scope="col" class="col">Nome</th>
-                    <th scope="col" class="col">CPF</th>
-                    <th scope="col" class="col">Telefone</th>
-                    <th scope="col" class="col">Ativo</th>
-                    <th scope="col" class="col">Opções</th>
+                    <th scope="col" class="col-2">Id</th>    
+                    <th scope="col" class="col-3">Nome</th>
+                    <th scope="col" class="col-2">CPF</th>
+                    <th scope="col" class="col-2">Telefone</th>
+                    <th scope="col" class="col-1">Ativo</th>
+                    <th scope="col" class="col-2">Opções</th>
 
                 </tr>
             </thead>
@@ -41,7 +41,7 @@
 
 <ng-template #cadastrar let-modal>
     <div class="modal-header">
-		<h4 class="modal-title">Cadastrar carro</h4>
+		<h4 class="modal-title">Cadastrar funcionario</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
@@ -56,7 +56,7 @@
 
 <ng-template #detalhar let-modal>
     <div class="modal-header">
-		<h4 class="modal-title">Detalhar carro</h4>
+		<h4 class="modal-title">Detalhando funcionario</h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
