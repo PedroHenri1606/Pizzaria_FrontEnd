@@ -32,7 +32,10 @@
                     <td>{{cliente.cpf}}</td>
                     <td>{{cliente.telefone}}</td>
                     <td>{{cliente.ativo}}</td>
-                    <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, cliente.id, cliente)">Editar</button> </td>
+                    <td *ngIf="!modoLancamento" > 
+                        <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, cliente.id, cliente)">Editar</button> 
+                        <button type="button" class="btn btn-outline-danger" (click)="deletar(cliente)">Deletar</button> 
+                    </td>
                     <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(cliente)">Lançar</button> </td>
                 </tr>   
             </tbody>

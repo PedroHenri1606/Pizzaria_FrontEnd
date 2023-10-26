@@ -78,9 +78,7 @@ export class EnderecolistComponent {
   }
 
   deletar(endereco: Endereco){
-    this.service.deletar(endereco.id).subscribe(() =>
-      this.listarTodos()
-    );
+    this.service.deletar(endereco.id).subscribe();  
   }
 
   adicionarOuEditar(endereco: Endereco){

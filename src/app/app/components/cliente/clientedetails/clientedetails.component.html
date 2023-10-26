@@ -27,10 +27,6 @@
     <button type="button" class="btn btn-outline-primary" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
 </form>
 
-
-
-
-
 <ng-template #cadastrarEndereco let-modal>
     <div class="modal-header">
         <h4 class="modal-title">Adicionar endereço</h4>
@@ -38,7 +34,7 @@
     </div>
     <div class="modal-body">
        
-        <app-enderecodetails [endereco]="enderecoSelecionado" (retorno)="retornoEnderecoList($event)"> </app-enderecodetails>
+        <app-enderecodetails (retorno)="retornoEnderecoList($event)"> </app-enderecodetails>
 
     </div>
     <div class="modal-footer">

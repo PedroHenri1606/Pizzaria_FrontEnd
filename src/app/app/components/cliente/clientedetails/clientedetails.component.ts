@@ -44,9 +44,9 @@ export class ClientedetailsComponent implements OnInit {
   }
 
   retornoEnderecoList(endereco: Endereco){
-    if(this.cliente.enderecos == null){
+    if(this.cliente.enderecos == null)
       this.cliente.enderecos = [];
-    }
+    
 
     this.cliente.enderecos.push(endereco);
     this.modalRef.dismiss();
