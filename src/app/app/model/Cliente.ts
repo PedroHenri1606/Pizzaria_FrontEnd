@@ -1,8 +1,9 @@
 import { Endereco } from "./Endereco";
+import { User } from "./User";
 
-export class Cliente{
+export class Cliente extends User{
 
-    id!: number;
+    idCliente!: number;
     ativo: boolean = true;
     nome!: string;  
     cpf!: string;

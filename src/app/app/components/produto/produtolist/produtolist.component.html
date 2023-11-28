@@ -31,7 +31,10 @@
                     <td>{{produto.valor}}</td>
                     <td>{{produto.tamanho}}</td>
                     <td>{{produto.ativo}}</td>
-                    <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, produto.id, produto)">Editar</button> </td>
+                    <td *ngIf="!modoLancamento" > 
+                        <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, produto.id, produto)">Editar</button> 
+                        <button *ngIf="!modoLancamento" type="button" class="btn btn-outline-danger" (click)="deletar(produto)">Deletar</button>
+                    </td>
                     <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(produto)">Lançar</button> </td>
         
                 </tr>

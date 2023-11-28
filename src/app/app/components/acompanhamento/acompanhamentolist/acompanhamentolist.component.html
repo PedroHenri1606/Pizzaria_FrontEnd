@@ -30,7 +30,10 @@
                     <td>{{acompanhamento.descricao}}</td>
                     <td>{{acompanhamento.valor}}</td>
                     <td>{{acompanhamento.ativo}}</td>
-                    <td *ngIf="!modoLancamento" > <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, acompanhamento.id, acompanhamento)">Editar</button> </td>
+                    <td *ngIf="!modoLancamento" > 
+                        <button type="button" class="btn btn-outline-warning" (click)="editar(detalhar, acompanhamento.id, acompanhamento)">Editar</button>
+                        <button *ngIf="!modoLancamento" type="button" class="btn btn-outline-danger" (click)="deletar(acompanhamento)">Deletar</button>
+                     </td>
                     <td *ngIf="modoLancamento" > <button type="button" class="btn btn-outline-success" (click)="lancamento(acompanhamento)">Lançar</button> </td>
                 </tr>
             </tbody>

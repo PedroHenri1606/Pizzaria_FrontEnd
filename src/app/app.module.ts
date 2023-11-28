@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './app/layout/index/index.component';
 import { HeaderComponent } from './app/layout/header/header.component';
 import { FooterComponent } from './app/layout/footer/footer.component';
-import { LoginComponent } from './app/system/login/login.component';
 import { ProdutodetailsComponent } from './app/components/produto/produtodetails/produtodetails.component';
 import { ProdutolistComponent } from './app/components/produto/produtolist/produtolist.component';
 import { AcompanhamentolistComponent } from './app/components/acompanhamento/acompanhamentolist/acompanhamentolist.component';
@@ -27,6 +26,7 @@ import { PedidodetailsComponent } from './app/components/pedido/pedidodetails/pe
 import { SaborlistComponent } from './app/components/sabor/saborlist/saborlist.component';
 import { SabordetailsComponent } from './app/components/sabor/sabordetails/sabordetails.component';
 import { ProdutoPedidodetailsComponent } from './app/components/produtoPedido/produto-pedidodetails/produto-pedidodetails.component';
+import { LoginComponent } from './app/components/login/login.component';
 
 
 @NgModule({
