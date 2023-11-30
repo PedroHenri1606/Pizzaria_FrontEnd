@@ -23,9 +23,11 @@
 
     <app-enderecolist [lista]="cliente.enderecos" ></app-enderecolist>
 
-    <button class= "btn btn-outline-success margem"> Salvar</button>
-    <button type="button" class="btn btn-outline-primary" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
+    <button class= "btn btn-outline-success margem" name="botaoCadastrar"> Salvar</button>
+    <button type="button" class="btn btn-outline-primary" name="botaoAdicionarEndereco" (click)="adicionarEndereco(cadastrarEndereco)">Adicionar endereço</button> 
 </form>
+
+
 
 <ng-template #cadastrarEndereco let-modal>
     <div class="modal-header">

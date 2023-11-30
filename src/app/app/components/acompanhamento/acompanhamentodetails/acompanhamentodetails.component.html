@@ -1,12 +1,12 @@
 <form (ngSubmit)="cadastrar()">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="descricao" placeholder="Descrição" [(ngModel)]="acompanhamento.descricao">
-        <label for="Descrição">Descrição</label>
+        <input type="text" class="form-control" name="descricao"  [(ngModel)]="acompanhamento.descricao">
+        <label for="descricao">Descrição</label>
     </div>
 
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" name="valor" placeholder="Valor" [(ngModel)]="acompanhamento.valor">
-        <label for="Valor">Valor</label>
+        <input type="number" class="form-control" name="valor" [(ngModel)]="acompanhamento.valor">
+        <label for="valor">Valor</label>
     </div>
 
     <select class="form-select form-select-lg mb-3" name="situacao" [(ngModel)]="acompanhamento.ativo">
