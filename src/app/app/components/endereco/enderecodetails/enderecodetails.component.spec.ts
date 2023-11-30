@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { EnderecodetailsComponent } from './enderecodetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Endereco } from 'src/app/app/model/Endereco';
-import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
+import { EnderecoService } from '../../../service/endereco/endereco.service';
+import { Endereco } from '../../../model/endereco/Endereco';
 
 describe('EnderecodetailsComponent', () => {
   let component: EnderecodetailsComponent;

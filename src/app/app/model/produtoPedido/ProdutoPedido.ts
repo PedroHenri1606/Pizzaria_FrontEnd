@@ -1,5 +1,5 @@
-import { Produto } from "./Produto";
-import { Sabor } from "./Sabor";
+import { Produto } from "../produto/Produto";
+import { Sabor } from "../sabor/Sabor";
 
 export class ProdutoPedido {
 

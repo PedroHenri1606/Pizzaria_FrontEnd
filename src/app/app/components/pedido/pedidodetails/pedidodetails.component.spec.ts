@@ -3,20 +3,22 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { PedidodetailsComponent } from './pedidodetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { PedidoService } from 'src/app/app/service/pedido/pedido.service';
-import { Pedido } from 'src/app/app/model/Pedido';
-import { SituacaoPedido } from 'src/app/app/model/enum/SituacaoPedido';
-import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { Endereco } from 'src/app/app/model/Endereco';
-import { Funcionario } from 'src/app/app/model/Funcionario';
-import { Produto } from 'src/app/app/model/Produto';
-import { TamanhoProduto } from 'src/app/app/model/enum/TamanhoProduto';
-import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
+
 import { By } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { PedidoService } from '../../../service/pedido/pedido.service';
+import { Acompanhamento } from '../../../model/acompanhamento/Acompanhamento';
+import { EnderecoService } from '../../../service/endereco/endereco.service';
+import { Cliente } from '../../../model/cliente/Cliente';
+import { Funcionario } from '../../../model/funcionario/Funcionario';
+import { Produto } from '../../../model/produto/Produto';
+import { ProdutoPedido } from '../../../model/produtoPedido/ProdutoPedido';
+import { TamanhoProduto } from '../../../model/enum/TamanhoProduto';
+import { SituacaoPedido } from '../../../model/enum/SituacaoPedido';
+import { Pedido } from '../../../model/pedido/Pedido';
+import { Endereco } from '../../../model/endereco/Endereco';
 
 describe('PedidodetailsComponent', () => {
   let component: PedidodetailsComponent;

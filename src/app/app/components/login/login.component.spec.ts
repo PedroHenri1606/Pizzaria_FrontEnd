@@ -3,10 +3,10 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { LoginComponent } from './login.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Login } from '../../model/Login';
 import { LoginService } from '../../service/login/login.service';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { Login } from '../../model/login/Login';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

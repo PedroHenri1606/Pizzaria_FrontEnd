@@ -3,11 +3,12 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { ProdutoPedidodetailsComponent } from './produto-pedidodetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
-import { Produto } from 'src/app/app/model/Produto';
-import { TamanhoProduto } from 'src/app/app/model/enum/TamanhoProduto';
-import { ProdutoPedidoService } from 'src/app/app/service/produto-pedido/produto-pedido.service';
+
 import { By } from '@angular/platform-browser';
+import { ProdutoPedidoService } from '../../../service/produto-pedido/produto-pedido.service';
+import { Produto } from '../../../model/produto/Produto';
+import { TamanhoProduto } from '../../../model/enum/TamanhoProduto';
+import { ProdutoPedido } from '../../../model/produtoPedido/ProdutoPedido';
 
 describe('ProdutoPedidodetailsComponent', () => {
   let component: ProdutoPedidodetailsComponent;

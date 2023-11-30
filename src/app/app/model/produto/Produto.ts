@@ -1,4 +1,4 @@
-import { TamanhoProduto } from "./enum/TamanhoProduto";
+import { TamanhoProduto } from "../enum/TamanhoProduto";
 
 export class Produto {
 

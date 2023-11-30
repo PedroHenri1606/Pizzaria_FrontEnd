@@ -1,5 +1,5 @@
-import { Endereco } from "./Endereco";
-import { User } from "./User";
+import { Endereco } from "../endereco/Endereco";
+import { User } from "../user/User";
 
 export class Cliente extends User{
 

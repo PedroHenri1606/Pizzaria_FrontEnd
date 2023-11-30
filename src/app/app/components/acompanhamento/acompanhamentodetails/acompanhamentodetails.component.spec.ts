@@ -3,9 +3,9 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { AcompanhamentodetailsComponent } from './acompanhamentodetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
 import { By } from '@angular/platform-browser';
-import { AcompanhamentoService } from 'src/app/app/service/acompanhamento/acompanhamento.service';
+import { AcompanhamentoService } from '../../../service/acompanhamento/acompanhamento.service';
+import { Acompanhamento } from '../../../model/acompanhamento/Acompanhamento';
 
 describe('AcompanhamentodetailsComponent', () => {
   let component: AcompanhamentodetailsComponent;

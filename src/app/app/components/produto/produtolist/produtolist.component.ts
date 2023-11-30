@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Produto } from 'src/app/app/model/Produto';
-import { ProdutoService } from 'src/app/app/service/produto/produto.service';
+import { Produto } from '../../../model/produto/Produto';
+import { ProdutoService } from '../../../service/produto/produto.service';
 
 @Component({
   selector: 'app-produtolist',

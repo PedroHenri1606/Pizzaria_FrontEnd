@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output, inject} from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Funcionario } from 'src/app/app/model/Funcionario';
-import { FuncionarioService } from 'src/app/app/service/funcionario/funcionario.service';
+import { Funcionario } from '../../../model/funcionario/Funcionario';
+import { FuncionarioService } from '../../../service/funcionario/funcionario.service';
+
 
 @Component({
   selector: 'app-funcionariolist',

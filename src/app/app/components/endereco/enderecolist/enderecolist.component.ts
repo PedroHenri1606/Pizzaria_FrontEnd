@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { Endereco } from 'src/app/app/model/Endereco';
-import { EnderecoService } from 'src/app/app/service/endereco/endereco.service';
+import { Endereco } from '../../../model/endereco/Endereco';
+import { EnderecoService } from '../../../service/endereco/endereco.service';
 
 @Component({
   selector: 'app-enderecolist',

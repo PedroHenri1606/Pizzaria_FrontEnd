@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Endereco } from '../../model/Endereco';
+import { Endereco } from '../../model/endereco/Endereco';
 import { Observable } from 'rxjs';
 
 @Injectable({

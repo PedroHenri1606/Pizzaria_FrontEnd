@@ -3,9 +3,10 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { SabordetailsComponent } from './sabordetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Sabor } from 'src/app/app/model/Sabor';
-import { SaborService } from 'src/app/app/service/sabor/sabor.service';
+
 import { By } from '@angular/platform-browser';
+import { SaborService } from '../../../service/sabor/sabor.service';
+import { Sabor } from '../../../model/sabor/Sabor';
 
 describe('SabordetailsComponent', () => {
   let component: SabordetailsComponent;

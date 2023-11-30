@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Produto } from 'src/app/app/model/Produto';
-import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
-import { Sabor } from 'src/app/app/model/Sabor';
-import { ProdutoPedidoService } from 'src/app/app/service/produto-pedido/produto-pedido.service';
+import { ProdutoPedido } from '../../../model/produtoPedido/ProdutoPedido';
+import { ProdutoPedidoService } from '../../../service/produto-pedido/produto-pedido.service';
+import { Produto } from '../../../model/produto/Produto';
+import { Sabor } from '../../../model/sabor/Sabor';
+
 
 @Component({
   selector: 'app-produto-pedidodetails',

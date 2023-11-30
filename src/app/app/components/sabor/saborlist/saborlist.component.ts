@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Sabor } from 'src/app/app/model/Sabor';
-import { SaborService } from 'src/app/app/service/sabor/sabor.service';
+import { Sabor } from '../../../model/sabor/Sabor';
+import { SaborService } from '../../../service/sabor/sabor.service';
+
 
 @Component({
   selector: 'app-saborlist',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
-import { Produto } from 'src/app/app/model/Produto';
-import { ProdutoService } from 'src/app/app/service/produto/produto.service';
+import { ProdutoService } from '../../../service/produto/produto.service';
+import { Produto } from '../../../model/produto/Produto';
 
 @Component({
   selector: 'app-produtodetails',

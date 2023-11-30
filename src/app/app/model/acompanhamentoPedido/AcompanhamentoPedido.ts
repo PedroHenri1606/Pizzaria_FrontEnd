@@ -1,4 +1,4 @@
-import { Acompanhamento } from "./Acompanhamento";
+import { Acompanhamento } from "../acompanhamento/Acompanhamento";
 
 export class AcompanhamentoPedido {
 

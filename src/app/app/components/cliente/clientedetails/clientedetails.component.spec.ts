@@ -3,12 +3,12 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { ClientedetailsComponent } from './clientedetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { Endereco } from 'src/app/app/model/Endereco';
 import { By } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
+import { ClienteService } from '../../../service/cliente/cliente.service';
+import { Endereco } from '../../../model/endereco/Endereco';
+import { Cliente } from '../../../model/cliente/Cliente';
 
 describe('ClientedetailsComponent', () => {
   let component: ClientedetailsComponent;

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
+import { Cliente } from '../../../model/cliente/Cliente';
+import { ClienteService } from '../../../service/cliente/cliente.service';
 
 
 @Component({

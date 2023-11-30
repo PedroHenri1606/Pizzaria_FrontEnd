@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Login } from '../../model/Login';
 import { LoginService } from '../../service/login/login.service';
+import { Login } from '../../model/login/Login';
 
 @Component({
   selector: 'app-login',

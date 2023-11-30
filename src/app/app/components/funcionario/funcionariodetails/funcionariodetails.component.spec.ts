@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { FuncionariodetailsComponent } from './funcionariodetails.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Funcionario } from 'src/app/app/model/Funcionario';
-import { FuncionarioService } from 'src/app/app/service/funcionario/funcionario.service';
 import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { FuncionarioService } from '../../../service/funcionario/funcionario.service';
+import { Funcionario } from '../../../model/funcionario/Funcionario';
 
 describe('FuncionariodetailsComponent', () => {
   let component: FuncionariodetailsComponent;

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { Endereco } from 'src/app/app/model/Endereco';
-import { ClienteService } from 'src/app/app/service/cliente/cliente.service';
+import { Endereco } from '../../../model/endereco/Endereco';
+import { Cliente } from '../../../model/cliente/Cliente';
+import { ClienteService } from '../../../service/cliente/cliente.service';
 
 @Component({
   selector: 'app-clientedetails',

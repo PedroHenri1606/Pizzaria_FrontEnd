@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { AcompanhamentoPedido } from '../../model/AcompanhamentoPedido';
+import { AcompanhamentoPedido } from '../../model/acompanhamentoPedido/AcompanhamentoPedido';
 import { Observable } from 'rxjs';
 
 @Injectable({

@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Acompanhamento } from 'src/app/app/model/Acompanhamento';
-import { Cliente } from 'src/app/app/model/Cliente';
-import { Endereco } from 'src/app/app/model/Endereco';
-import { Funcionario } from 'src/app/app/model/Funcionario';
-import { Pedido } from 'src/app/app/model/Pedido';
-import { Produto } from 'src/app/app/model/Produto';
-import { ProdutoPedido } from 'src/app/app/model/ProdutoPedido';
-import { PedidoService } from 'src/app/app/service/pedido/pedido.service';
+import { Pedido } from '../../../model/pedido/Pedido';
+import { PedidoService } from '../../../service/pedido/pedido.service';
+import { ProdutoPedido } from '../../../model/produtoPedido/ProdutoPedido';
+import { Acompanhamento } from '../../../model/acompanhamento/Acompanhamento';
+import { Cliente } from '../../../model/cliente/Cliente';
+import { Funcionario } from '../../../model/funcionario/Funcionario';
+import { Endereco } from '../../../model/endereco/Endereco';
 
 @Component({
   selector: 'app-pedidodetails',
